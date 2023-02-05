@@ -16,7 +16,7 @@ Após criadas as dependencias, criamos o index.js onde estará a configuração 
 
 
  ```javascript
-    import express from 'express'          || INCIANDO O PROJETO
+    import express from 'express'          //INCIANDO O PROJETO
     
     
     const app = express()
