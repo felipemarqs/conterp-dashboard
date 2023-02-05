@@ -31,7 +31,7 @@ mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  })completed 
+  }) 
   .then(() => {
     app.listen(PORT, () => console.log(`Server running in port ${PORT}`));
 
