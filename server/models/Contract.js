@@ -10,7 +10,13 @@ const ContractSchema = new mongoose.Schema(
         isActive: {
             type: Boolean,
             required: true
-        }
+        },
+        vehicles: [
+            {
+                type: mongoose.Types.ObjectId,
+                ref: 'Vehicle'
+            }
+        ]
     }
 )
 

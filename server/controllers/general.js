@@ -5,10 +5,13 @@ import Vehicle from "../models/Vehicle.js"
 export const getContracts = async (req, res) => {
 
    try {
-        const contract = await Contract.find()
-        const vehicles = await Vehicle.find().populate('contractId' ,'name').select("-_id")
-        res.status(200).json(vehicles)
-        console.log(contract);
+        const contractDb = await Contract.find().populate('vehicles')
+        const vehicles = await Vehicle.find().populate('contractId')
+
+       
+       
+        res.status(200).json(contractD)
+        
    } catch (error) {
 
     console.log(error)

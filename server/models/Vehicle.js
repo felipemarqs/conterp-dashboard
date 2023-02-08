@@ -30,6 +30,10 @@ const VehicleSchema = new mongoose.Schema({
     },
     tankCapacity: {
         type: Number
+    },
+    isActive: {
+        type: Boolean,
+        default: true
     }
 })
 
