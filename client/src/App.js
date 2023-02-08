@@ -10,7 +10,7 @@ import Layout from './scenes/layout'
 
 //Importação das cenas
 import Dashboard from './scenes/dashboard'
-
+//
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
