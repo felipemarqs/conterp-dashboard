@@ -7,8 +7,8 @@ import { useGetContractsQuery } from 'state/api'
 
 const Dashboard = () => {
 
-  //console.log(process.env.REACT_APP_BASE_URL)
-  const {data} = useGetContractsQuery()
+  console.log(process.env.REACT_APP_BASE_URL)
+  const data = useGetContractsQuery()
   console.log(data)
 
   return (

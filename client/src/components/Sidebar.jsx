@@ -14,16 +14,15 @@ import {
   useTheme,
 } from "@mui/material";
 
+import TableRowsOutlinedIcon from '@mui/icons-material/TableRowsOutlined';
 import {
   SettingsOutlined,
   ChevronLeft,
   ChevronRightOutlined,
   HomeOutlined,
-  ShoppingCartOutlined,
   Groups2Outlined,
   ReceiptLongOutlined,
   PublicOutlined,
-  PointOfSaleOutlined,
   TodayOutlined,
   CalendarMonthOutlined,
   AdminPanelSettingsOutlined,
@@ -31,9 +30,9 @@ import {
   PieChartOutlined,
 } from "@mui/icons-material";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import FlexBetween from "./FlexBetween";
 
@@ -43,15 +42,17 @@ import logo from "../assets/logo.png";
 const navItems = [
   {
     text: "Dashboard",
+    navigateText: "dashboard",
     icon: <HomeOutlined />,
   },
   {
-    text: "Client Facing",
+    text: "Contratos",
     icon: null,
   },
   {
-    text: "Products",
-    icon: <ShoppingCartOutlined />,
+    text: "Listar Contratos",
+    navigateText: "contract",
+    icon: <TableRowsOutlinedIcon />,
   },
   {
     text: "Costumers",
@@ -66,15 +67,17 @@ const navItems = [
     icon: <PublicOutlined />,
   },
   {
-    text: "Sales",
+    text: "Contratos",
     icon: null,
   },
   {
-    text: "Overview",
-    icon: <PointOfSaleOutlined />,
+    text: "Listar Contratos",
+    navigateText: "contract",
+    icon: <TableRowsOutlinedIcon />,
   },
   {
-    text: "Daily",
+    text: "Cadastrar Contrato",
+    navigateText: "createcontract",
     icon: <TodayOutlined />,
   },
   {
@@ -106,7 +109,7 @@ const Sidebar = ({
   isNonMobile,
   user,
 }) => {
-  const { pathname } = useLocation();
+  
   const [active, setActive] = useState("");
   const navigate = useNavigate();
   const theme = useTheme();
@@ -114,9 +117,9 @@ const Sidebar = ({
 
 
 
-  useEffect(() => {
-    setActive(pathname.substring(1));
-  }, [pathname]);
+ /*  useEffect(() => {
+    setActive(navigateText);
+  }, [pathname]); */
 
   return (
     <Box component="nav">
@@ -161,7 +164,7 @@ const Sidebar = ({
               </FlexBetween>
             </Box>
             <List>
-              {navItems.map(({ icon, text }) => {
+              {navItems.map(({ icon, text, navigateText }) => {
                 if (!icon) {
                   return (
                     <Typography
@@ -184,16 +187,16 @@ const Sidebar = ({
                   <ListItem key={text} disablePadding>
                     <ListItemButton
                       onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
+                        navigate(`/${navigateText}`);
+                        setActive(navigateText);
                       }}
                       sx={{
                         backgroundColor:
-                          active === lcText
+                          active === navigateText
                             ? theme.palette.secondary[300]
                             : "transparent",
                         color:
-                          active === lcText
+                          active === navigateText
                             ? theme.palette.primary[800]
                             : themeMode === "light" ? theme.palette.grey[800] : theme.palette.grey[100]
                       }}
@@ -202,9 +205,9 @@ const Sidebar = ({
                         sx={{
                           ml: "2rem",
                           color:
-                            active === lcText
-                              ? themeMode === "light" ? theme.palette.grey[100] : theme.palette.primary[600]
-                              : themeMode === "light" ? theme.palette.grey[900] : theme.palette.secondary[200],
+                            active === navigateText
+                              ? themeMode === "light" ? theme.palette.grey[900] : theme.palette.primary[100]
+                              : themeMode === "light" ? theme.palette.grey[900] : theme.palette.secondary[100],
                         }}
                       >
                         {icon}
