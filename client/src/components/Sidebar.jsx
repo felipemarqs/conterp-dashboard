@@ -110,6 +110,9 @@ const Sidebar = ({
   const [active, setActive] = useState("");
   const navigate = useNavigate();
   const theme = useTheme();
+  const themeMode = theme.palette.mode
+
+
 
   useEffect(() => {
     setActive(pathname.substring(1));
@@ -165,6 +168,9 @@ const Sidebar = ({
                       key={text}
                       sx={{
                         m: "2.25rem 0 1rem 3rem",
+                        color:
+                         themeMode === "light" ? 
+                         theme.palette.grey[900] : theme.palette.secondary[200],
                       }}
                     >
                       {text}
@@ -189,7 +195,7 @@ const Sidebar = ({
                         color:
                           active === lcText
                             ? theme.palette.primary[800]
-                            : theme.palette.grey[100],
+                            : themeMode === "light" ? theme.palette.grey[800] : theme.palette.grey[100]
                       }}
                     >
                       <ListItemIcon
@@ -197,8 +203,8 @@ const Sidebar = ({
                           ml: "2rem",
                           color:
                             active === lcText
-                              ? theme.palette.primary[600]
-                              : theme.palette.secondary[200],
+                              ? themeMode === "light" ? theme.palette.grey[100] : theme.palette.primary[600]
+                              : themeMode === "light" ? theme.palette.grey[900] : theme.palette.secondary[200],
                         }}
                       >
                         {icon}
