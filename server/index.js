@@ -16,6 +16,8 @@ import Refuel from "./models/Refuel.js";
 import { contractData } from "./data/index.js";
 
 import contractRoutes from "./routes/contract.js";
+import vehicleRoutes from  './routes/vehicle.js';
+import refuelRoutes from './routes/refuel.js';
 
 /*Configurando o servidor*/
 
@@ -43,7 +45,8 @@ app.use((req, res, next) => {
 
 /* Rotas */
 app.use("/contract", contractRoutes);
-//app.use("/vehicle", vehicleRoutes);
+app.use("/vehicle", vehicleRoutes);
+app.use("/refuel", refuelRoutes);
 
 /* Configurando o Mongoose */
 

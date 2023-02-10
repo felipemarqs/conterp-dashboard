@@ -46,12 +46,12 @@ const navItems = [
     icon: <HomeOutlined />,
   },
   {
-    text: "Contratos",
+    text: "Veículos",
     icon: null,
   },
   {
-    text: "Listar Contratos",
-    navigateText: "contract",
+    text: "Listar Veículos",
+    navigateText: "vehicle",
     icon: <TableRowsOutlinedIcon />,
   },
   {
@@ -93,7 +93,8 @@ const navItems = [
     icon: null,
   },
   {
-    text: "Admin",
+    text: "Overview",
+    navigateText: "overview",
     icon: <AdminPanelSettingsOutlined />,
   },
   {

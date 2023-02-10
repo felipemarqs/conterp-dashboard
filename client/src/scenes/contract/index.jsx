@@ -13,12 +13,6 @@ const Contract = () => {
 
     const columns = [
         {
-          field: "_id",
-          headerName: "ID",
-          flex: 0.5,
-        },
-        
-        {
           field: "name",
           headerName: "Name",
           flex: 0.5,
@@ -31,11 +25,12 @@ const Contract = () => {
           }
         },
        {
+        field: "actions",
+        headerName: "Actions",
         align: "center",
         flex: 0.5,
          renderCell: (params) => {
-          const onClick = (e) => {
-            e.stopPropagation(); // don't select this row after clicking
+            //e.stopPropagation(); //don't select this row after clicking
             const api = params.api;
             const thisRow = {};
     
@@ -46,12 +41,9 @@ const Contract = () => {
                 (c) => (thisRow[c.field] = params.getValue(params.id, c.field))
               );
     
-            return alert(JSON.stringify(thisRow, null, 4));
-          };
-    
-          return (
-                <Box display="flex" justifyContent="space-around" alignItems="center" width="70%">
-                   <Button onClick={onClick}
+              return (
+                <Box display="flex" justifyContent="space-around" alignItems="center" width="70%" key={thisRow._id + "box"}>
+                   <Button key={thisRow._id}
                     sx={{
                       backgroundColor: theme.palette.secondary.light,
                       color: theme.palette.background.alt,
@@ -59,10 +51,10 @@ const Contract = () => {
                       fontWeight: "bold",
                       padding: "5px 10px",
                     }}
-                    ><EditOutlinedIcon/>
+                    ><EditOutlinedIcon key={thisRow._id + "icon1"}/>
                     </Button>
 
-                    <Button onClick={onClick}
+                    <Button key={thisRow._id + "2"}
                     sx={{
                       backgroundColor: theme.palette.secondary.light,
                       color: theme.palette.background.alt,
@@ -70,24 +62,23 @@ const Contract = () => {
                       fontWeight: "bold",
                       padding: "5px 10px",
                     }}
-                    ><DeleteOutlineOutlinedIcon/>
+                    ><DeleteOutlineOutlinedIcon key={thisRow._id + "icon2"}/>
                     </Button>
 
                 </Box>
          )
+
+
+
+
+           // return alert(JSON.stringify(thisRow, null, 4));
+                   
         }
       }
       
       ];
 
-      
-
-
       const isLoading = false;
-
-
-
-
     console.log(contractData)
     return (
         
@@ -97,10 +88,10 @@ const Contract = () => {
         height="75vh"
         sx={{
           "& .MuiDataGrid-root": {
-            border: "none",
+            borderColor: "white",
           },
           "& .MuiDataGrid-cell": {
-            borderBottom: "none",
+            borderColor: "white",
           },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: theme.palette.background.alt,
