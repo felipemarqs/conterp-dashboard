@@ -1,5 +1,4 @@
 import Contract from "../models/Contract.js";
-
 import Vehicle from "../models/Vehicle.js";
 
 export const getVehicles = async (req, res) => {

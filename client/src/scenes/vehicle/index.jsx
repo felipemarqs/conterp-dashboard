@@ -2,15 +2,17 @@ import React from 'react';
 
 import {Box, useTheme, Button, Typography} from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid';
-import {vehicleData} from '../../data/index.js'
+//import {vehicleData} from '../../data/index.js'
 import Header from '../../components/Header';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import plateBackgroundImage from '../../assets/placa.png'
+import { useGetVehiclesQuery } from 'state/api';
 
 const Vehicle = () => {
 
     const theme = useTheme()
+    const { data , isLoading } = useGetVehiclesQuery()
 
     const columns = [
         {
@@ -33,7 +35,7 @@ const Vehicle = () => {
                 backgroundPosition: "center",
               }} 
               >
-                <Typography variant='h5' color="black" sx={{ mr: "5px" }}>
+                <Typography variant='h5' color="black" sx={{ mr: "5px"}}>
                   {plate}
                 </Typography>
               </Box>
@@ -81,8 +83,8 @@ const Vehicle = () => {
      
       ];
 
-      const isLoading = false;
-    console.log(vehicleData)
+    
+    console.log(data)
     return (
         
             <Box m="1.5rem 2rem">
@@ -114,9 +116,9 @@ const Vehicle = () => {
           },
         }}>
                 <DataGrid
-                loading={isLoading || !vehicleData}
+                loading={isLoading || !data}
                 getRowId={(row) => row._id }
-                rows={vehicleData || []}
+                rows={data || []}
                 columns={columns}
                 />
              </Box>
