@@ -16,6 +16,8 @@ import Refuel from "./models/Refuel.js";
 import { contractData } from "./data/index.js";
 
 import contractRoutes from "./routes/contract.js";
+import vehicleRoutes from  './routes/vehicle.js';
+import refuelRoutes from './routes/refuel.js';
 
 /*Configurando o servidor*/
 
@@ -29,9 +31,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+  );
+  
+  next();
+});
+
+
+
 /* Rotas */
 app.use("/contract", contractRoutes);
-//app.use("/vehicle", vehicleRoutes);
+app.use("/vehicle", vehicleRoutes);
+app.use("/refuel", refuelRoutes);
 
 /* Configurando o Mongoose */
 

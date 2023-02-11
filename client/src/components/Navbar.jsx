@@ -44,7 +44,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen, user }) => {
         boxShadow: "none",
       }}
     >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
+      <Toolbar sx={{ justifyContent: "space-between" , backgroundColor:theme.palette.primary[400]}}>
         {/* LEFT SIDE */}
 
       

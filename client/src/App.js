@@ -10,6 +10,10 @@ import Layout from './scenes/layout'
 
 //Importação das cenas
 import Dashboard from './scenes/dashboard'
+import Contract from './scenes/contract'
+import CreateContract from './scenes/contract/create'
+import Vehicle from './scenes/vehicle'
+import Overview from "./scenes/overview";
 //
 
 function App() {
@@ -24,6 +28,11 @@ function App() {
           <Route element={<Layout/>}>
               <Route path="/" element={<Navigate to="/dashboard" replace/>}/>
               <Route path="/dashboard" element={<Dashboard/>}/>
+              <Route path="/contract" element={<Contract/>}/>
+              <Route path="/createcontract" element={<CreateContract/>}/>              
+              <Route path="/vehicle" element={<Vehicle/>}/>
+              <Route path="/overview" element={<Overview/>}/>
+
 
           </Route>
         </Routes>
