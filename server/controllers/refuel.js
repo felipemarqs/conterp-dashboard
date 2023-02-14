@@ -11,7 +11,7 @@ export const getRefuel = async (req, res) => {
             model: "Contract",
             select: "name"
         }
-     }).limit(2)
+     }).limit(5000)
 
     res.status(200).json(refuel);
   } catch (error) {

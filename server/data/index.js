@@ -8492,7 +8492,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dc8",
     "plate": "PLG9763",
     "date": "2022-01-01T17:04:00.000Z",
-    "vehicle": "63e3a56a47bedba579c30d32",
+    "vehicle": {
+    "_id": "63e3a56a47bedba579c30d32",
+    "plate": "PLG9763",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "PRATA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 34.41,
     "price": 233.64,
     "fuelType": "Gasolina",
@@ -8502,7 +8516,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dc9",
     "plate": "RFH7B79",
     "date": "2022-01-02T06:44:00.000Z",
-    "vehicle": "63e3a53547bedba579c30b11",
+    "vehicle": {
+    "_id": "63e3a53547bedba579c30b11",
+    "plate": "RFH7B79",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT/UNO ATTRACTIVE 1.0",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 32.11,
     "price": 211.61,
     "fuelType": "Gasolina",
@@ -8512,7 +8540,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dca",
     "plate": "PLT0J50",
     "date": "2022-01-02T07:07:00.000Z",
-    "vehicle": "63e3a56e47bedba579c30d5f",
+    "vehicle": {
+    "_id": "63e3a56e47bedba579c30d5f",
+    "plate": "PLT0J50",
+    "type": "Passeios/Utilitários",
+    "model": "STRADA HD WK CC E",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 38.33,
     "price": 260.6,
     "fuelType": "Gasolina",
@@ -8522,7 +8564,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dcb",
     "plate": "RNB0J71",
     "date": "2022-01-02T08:15:00.000Z",
-    "vehicle": "63e3a60547bedba579c31372",
+    "vehicle": {
+    "_id": "63e3a60547bedba579c31372",
+    "plate": "RNB0J71",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT/UNO ATTRACTIVE 1.0",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21af",
+    "name": "SPT 151"
+    },
+    "manufacturer": "FIAT",
+    "color": "BRANCA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 43,
     "price": 303.37,
     "fuelType": "Gasolina",
@@ -8532,7 +8588,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dcc",
     "plate": "AQC1761",
     "date": "2022-01-02T08:41:00.000Z",
-    "vehicle": "63e3a51047bedba579c30995",
+    "vehicle": {
+    "_id": "63e3a51047bedba579c30995",
+    "plate": "AQC1761",
+    "type": "Máquinas e Equipamentos",
+    "model": "W",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 352,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 122.72,
     "price": 733.87,
     "fuelType": "Diesel",
@@ -8542,7 +8612,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dcd",
     "plate": "PLU0G57",
     "date": "2022-01-02T10:33:00.000Z",
-    "vehicle": "63e3a57147bedba579c30d78",
+    "vehicle": {
+    "_id": "63e3a57147bedba579c30d78",
+    "plate": "PLU0G57",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 62,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 47.23,
     "price": 321.11,
     "fuelType": "Gasolina",
@@ -8552,7 +8636,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dce",
     "plate": "RNF6G80",
     "date": "2022-01-02T11:20:00.000Z",
-    "vehicle": "63e3a5af47bedba579c30ff8",
+    "vehicle": {
+    "_id": "63e3a5af47bedba579c30ff8",
+    "plate": "RNF6G80",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 38.29,
     "price": 260,
     "fuelType": "Gasolina",
@@ -8562,7 +8660,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dcf",
     "plate": "QTU2B89",
     "date": "2022-01-02T15:42:00.000Z",
-    "vehicle": "63e3a60c47bedba579c313b3",
+    "vehicle": {
+    "_id": "63e3a60c47bedba579c313b3",
+    "plate": "QTU2B89",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21b1",
+    "name": "SPT 76"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 43.48,
     "price": 295.66,
     "fuelType": "Gasolina",
@@ -8572,7 +8684,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd0",
     "plate": "RMZ5G83",
     "date": "2022-01-02T16:22:00.000Z",
-    "vehicle": "63e3a53d47bedba579c30b66",
+    "vehicle": {
+    "_id": "63e3a53d47bedba579c30b66",
+    "plate": "RMZ5G83",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "VW",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 41.63,
     "price": 274.35,
     "fuelType": "Gasolina",
@@ -8582,7 +8708,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd1",
     "plate": "RDA4D72",
     "date": "2022-01-02T18:15:00.000Z",
-    "vehicle": "63e3a55f47bedba579c30cbf",
+    "vehicle": {
+    "_id": "63e3a55f47bedba579c30cbf",
+    "plate": "RDA4D72",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a2",
+    "name": "DOW Quimica"
+    },
+    "manufacturer": "VW",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 25,
     "price": 169.97,
     "fuelType": "Gasolina",
@@ -8592,7 +8732,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd2",
     "plate": "QUQ0097",
     "date": "2022-01-03T06:19:00.000Z",
-    "vehicle": "63e3a52c47bedba579c30ab2",
+    "vehicle": {
+    "_id": "63e3a52c47bedba579c30ab2",
+    "plate": "QUQ0097",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "VW",
+    "color": "CINZA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 44.48,
     "price": 293.53,
     "fuelType": "Gasolina",
@@ -8602,7 +8756,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd3",
     "plate": "RFQ8G39",
     "date": "2022-01-03T06:24:00.000Z",
-    "vehicle": "63e3a53947bedba579c30b39",
+    "vehicle": {
+    "_id": "63e3a53947bedba579c30b39",
+    "plate": "RFQ8G39",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT FIORINO WORKING",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 44.62,
     "price": 311.88,
     "fuelType": "Gasolina",
@@ -8612,7 +8780,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd4",
     "plate": "JSX0G08",
     "date": "2022-01-03T06:32:00.000Z",
-    "vehicle": "63e3a51747bedba579c309e0",
+    "vehicle": {
+    "_id": "63e3a51747bedba579c309e0",
+    "plate": "JSX0G08",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "CARGO 2622",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FORD",
+    "color": "BRANCA",
+    "tankCapacity": 300,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 70.93,
     "price": 380.89,
     "fuelType": "Diesel",
@@ -8622,7 +8804,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd5",
     "plate": "PLT8F06",
     "date": "2022-01-03T07:08:00.000Z",
-    "vehicle": "63e3a56f47bedba579c30d69",
+    "vehicle": {
+    "_id": "63e3a56f47bedba579c30d69",
+    "plate": "PLT8F06",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT STRADA HD WK CC E",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 39.63,
     "price": 265.51,
     "fuelType": "Gasolina",
@@ -8632,7 +8828,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd6",
     "plate": "RNP0D70",
     "date": "2022-01-03T07:18:00.000Z",
-    "vehicle": "63e3a5f247bedba579c312af",
+    "vehicle": {
+    "_id": "63e3a5f247bedba579c312af",
+    "plate": "RNP0D70",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT/FIORINO ENDURANCE",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21ac",
+    "name": "Sonolog"
+    },
+    "manufacturer": "FIAT",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 44.13,
     "price": 290.48,
     "fuelType": "Gasolina",
@@ -8642,7 +8852,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd7",
     "plate": "QTU5E54",
     "date": "2022-01-03T07:21:00.000Z",
-    "vehicle": "63e3a58447bedba579c30e40",
+    "vehicle": {
+    "_id": "63e3a58447bedba579c30e40",
+    "plate": "QTU5E54",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT STRADA HD WK CC E",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 38.62,
     "price": 262.61,
     "fuelType": "Gasolina",
@@ -8652,7 +8876,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd8",
     "plate": "RFZ1A73",
     "date": "2022-01-03T07:26:00.000Z",
-    "vehicle": "63e3a5a747bedba579c30fa3",
+    "vehicle": {
+    "_id": "63e3a5a747bedba579c30fa3",
+    "plate": "RFZ1A73",
+    "type": "Passeios/Utilitários",
+    "model": "ARGO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 36.71,
     "price": 249.62,
     "fuelType": "Gasolina",
@@ -8662,7 +8900,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dd9",
     "plate": "RFO8G41",
     "date": "2022-01-03T07:50:00.000Z",
-    "vehicle": "63e3a59d47bedba579c30f3f",
+    "vehicle": {
+    "_id": "63e3a59d47bedba579c30f3f",
+    "plate": "RFO8G41",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT/STRADA HD WK CD E",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 33.42,
     "price": 227.27,
     "fuelType": "Gasolina",
@@ -8672,7 +8924,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dda",
     "plate": "RFJ7B08",
     "date": "2022-01-03T07:57:00.000Z",
-    "vehicle": "63e3a60347bedba579c31359",
+    "vehicle": {
+    "_id": "63e3a60347bedba579c31359",
+    "plate": "RFJ7B08",
+    "type": "Passeios/Utilitários",
+    "model": "ARGO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21af",
+    "name": "SPT 151"
+    },
+    "manufacturer": "FIAT",
+    "color": "CINZA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 36.25,
     "price": 245.34,
     "fuelType": "Gasolina",
@@ -8682,7 +8948,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1ddb",
     "plate": "RNZ8C05",
     "date": "2022-01-03T07:59:00.000Z",
-    "vehicle": "63e3a5d947bedba579c311a6",
+    "vehicle": {
+    "_id": "63e3a5d947bedba579c311a6",
+    "plate": "RNZ8C05",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a8",
+    "name": "Origem"
+    },
+    "manufacturer": "VOLKSWAGEN",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 34.26,
     "price": 232.96,
     "fuelType": "Gasolina",
@@ -8692,7 +8972,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1ddc",
     "plate": "RNI4A84",
     "date": "2022-01-03T08:04:00.000Z",
-    "vehicle": "63e3a5b147bedba579c3100c",
+    "vehicle": {
+    "_id": "63e3a5b147bedba579c3100c",
+    "plate": "RNI4A84",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VOLKSWAGEN",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 53.51,
     "price": 374.53,
     "fuelType": "Gasolina",
@@ -8702,7 +8996,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1ddd",
     "plate": "QUD6816",
     "date": "2022-01-03T08:12:00.000Z",
-    "vehicle": "63e3a58647bedba579c30e4f",
+    "vehicle": {
+    "_id": "63e3a58647bedba579c30e4f",
+    "plate": "QUD6816",
+    "type": "Passeios/Utilitários",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 70,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 43.4,
     "price": 295.09,
     "fuelType": "Gasolina",
@@ -8712,7 +9020,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dde",
     "plate": "RGA0F57",
     "date": "2022-01-03T08:16:00.000Z",
-    "vehicle": "63e3a5a847bedba579c30fb2",
+    "vehicle": {
+    "_id": "63e3a5a847bedba579c30fb2",
+    "plate": "RGA0F57",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "CINZA",
+    "tankCapacity": 58,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 39.06,
     "price": 265.62,
     "fuelType": "Gasolina",
@@ -8722,7 +9044,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1ddf",
     "plate": "PLT8J47",
     "date": "2022-01-03T08:20:00.000Z",
-    "vehicle": "63e3a57047bedba579c30d6e",
+    "vehicle": {
+    "_id": "63e3a57047bedba579c30d6e",
+    "plate": "PLT8J47",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT STRADA HD WK CC E",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 52.48,
     "price": 356.81,
     "fuelType": "Gasolina",
@@ -8732,7 +9068,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de0",
     "plate": "PKN1936",
     "date": "2022-01-03T08:33:00.000Z",
-    "vehicle": "63e3a51e47bedba579c30a21",
+    "vehicle": {
+    "_id": "63e3a51e47bedba579c30a21",
+    "plate": "PKN1936",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "ATRON 1635",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "M.BENZ",
+    "color": "BRANCA",
+    "tankCapacity": 500,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 20,
     "price": 99.9,
     "fuelType": "Arla",
@@ -8742,7 +9092,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de1",
     "plate": "GVO4558",
     "date": "2022-01-03T08:43:00.000Z",
-    "vehicle": "63e3a51147bedba579c309a4",
+    "vehicle": {
+    "_id": "63e3a51147bedba579c309a4",
+    "plate": "GVO4558",
+    "type": "Máquinas e Equipamentos",
+    "model": "W",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 300,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 172.95,
     "price": 974.76,
     "fuelType": "Diesel",
@@ -8752,7 +9116,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de2",
     "plate": "PKN1936",
     "date": "2022-01-03T08:44:00.000Z",
-    "vehicle": "63e3a51e47bedba579c30a21",
+    "vehicle": {
+    "_id": "63e3a51e47bedba579c30a21",
+    "plate": "PKN1936",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "ATRON 1635",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "M.BENZ",
+    "color": "BRANCA",
+    "tankCapacity": 500,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 399.77,
     "price": 2178.35,
     "fuelType": "Diesel",
@@ -8762,7 +9140,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de3",
     "plate": "RNZ6E03",
     "date": "2022-01-03T08:44:00.000Z",
-    "vehicle": "63e3a5b547bedba579c31039",
+    "vehicle": {
+    "_id": "63e3a5b547bedba579c31039",
+    "plate": "RNZ6E03",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VOLKSWAGEN",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 48.82,
     "price": 331.49,
     "fuelType": "Gasolina",
@@ -8772,7 +9164,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de4",
     "plate": "PLK0102",
     "date": "2022-01-03T08:49:00.000Z",
-    "vehicle": "63e3a56b47bedba579c30d37",
+    "vehicle": {
+    "_id": "63e3a56b47bedba579c30d37",
+    "plate": "PLK0102",
+    "type": "Passeios/Utilitários",
+    "model": "STRADA HD WK CC E",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 58,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 20,
     "price": 135.98,
     "fuelType": "Gasolina",
@@ -8782,7 +9188,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de5",
     "plate": "PKV6867",
     "date": "2022-01-03T08:50:00.000Z",
-    "vehicle": "63e3a54d47bedba579c30c0b",
+    "vehicle": {
+    "_id": "63e3a54d47bedba579c30c0b",
+    "plate": "PKV6867",
+    "type": "Passeios/Utilitários",
+    "model": "SPIN ACTIV",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a1",
+    "name": "Comp Manut Int"
+    },
+    "manufacturer": "CHEVROLET",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 50.24,
     "price": 351.16,
     "fuelType": "Gasolina",
@@ -8792,7 +9212,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de6",
     "plate": "OLC1341",
     "date": "2022-01-03T08:57:00.000Z",
-    "vehicle": "63e3a51b47bedba579c30a08",
+    "vehicle": {
+    "_id": "63e3a51b47bedba579c30a08",
+    "plate": "OLC1341",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "TECTOR 240",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "IVECO",
+    "color": "BRANCA",
+    "tankCapacity": 300,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 87.66,
     "price": 497.82,
     "fuelType": "Diesel",
@@ -8802,7 +9236,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de7",
     "plate": "RNF6G71",
     "date": "2022-01-03T09:04:00.000Z",
-    "vehicle": "63e3a55c47bedba579c30ca1",
+    "vehicle": {
+    "_id": "63e3a55c47bedba579c30ca1",
+    "plate": "RNF6G71",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39f5a8a9e3e8731958a49",
+    "name": "Comp Sondas"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 54,
     "price": 366.66,
     "fuelType": "Gasolina",
@@ -8812,7 +9260,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de8",
     "plate": "NZJ5289",
     "date": "2022-01-03T09:10:00.000Z",
-    "vehicle": "63e3a51a47bedba579c309fe",
+    "vehicle": {
+    "_id": "63e3a51a47bedba579c309fe",
+    "plate": "NZJ5289",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "VM260",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "VOLVO",
+    "color": "VERMELHA",
+    "tankCapacity": 500,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 365.94,
     "price": 2012.32,
     "fuelType": "Diesel",
@@ -8822,7 +9284,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1de9",
     "plate": "QUQ2930",
     "date": "2022-01-03T09:13:00.000Z",
-    "vehicle": "63e3a58947bedba579c30e72",
+    "vehicle": {
+    "_id": "63e3a58947bedba579c30e72",
+    "plate": "QUQ2930",
+    "type": "Passeios/Utilitários",
+    "model": "NﾃO IDENTIFICADO/CADASTRADO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "DESCONHECIDO",
+    "color": "BRANCA",
+    "tankCapacity": 70,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 40.01,
     "price": 272.04,
     "fuelType": "Gasolina",
@@ -8832,7 +9308,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dea",
     "plate": "RFQ3G59",
     "date": "2022-01-03T09:17:00.000Z",
-    "vehicle": "63e3a53747bedba579c30b2a",
+    "vehicle": {
+    "_id": "63e3a53747bedba579c30b2a",
+    "plate": "RFQ3G59",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT STRADA ENDURANCE CS",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 58,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 46.64,
     "price": 307.39,
     "fuelType": "Gasolina",
@@ -8842,7 +9332,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1deb",
     "plate": "PJF7495",
     "date": "2022-01-03T09:27:00.000Z",
-    "vehicle": "63e3a51c47bedba579c30a12",
+    "vehicle": {
+    "_id": "63e3a51c47bedba579c30a12",
+    "plate": "PJF7495",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "2730 2P",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "MERCEDES-BENZ CAMINH",
+    "color": "BRANCO",
+    "tankCapacity": 501,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 134.81,
     "price": 730.01,
     "fuelType": "Diesel",
@@ -8852,7 +9356,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dec",
     "plate": "XXX0004",
     "date": "2022-01-03T09:29:00.000Z",
-    "vehicle": "63e3a54547bedba579c30bb6",
+    "vehicle": {
+    "_id": "63e3a54547bedba579c30bb6",
+    "plate": "XXX0004",
+    "type": "Máquinas e Equipamentos",
+    "model": "...",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 500,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 172,
     "price": 927.65,
     "fuelType": "Diesel",
@@ -8862,7 +9380,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1ded",
     "plate": "XXX0005",
     "date": "2022-01-03T09:31:00.000Z",
-    "vehicle": "63e3a54647bedba579c30bbb",
+    "vehicle": {
+    "_id": "63e3a54647bedba579c30bbb",
+    "plate": "XXX0005",
+    "type": "Máquinas e Equipamentos",
+    "model": ".",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 500,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 41.27,
     "price": 221.44,
     "fuelType": "Diesel",
@@ -8872,7 +9404,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dee",
     "plate": "PJF7495",
     "date": "2022-01-03T09:32:00.000Z",
-    "vehicle": "63e3a51c47bedba579c30a12",
+    "vehicle": {
+    "_id": "63e3a51c47bedba579c30a12",
+    "plate": "PJF7495",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "2730 2P",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "MERCEDES-BENZ CAMINH",
+    "color": "BRANCO",
+    "tankCapacity": 501,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 20,
     "price": 99,
     "fuelType": "Arla",
@@ -8882,7 +9428,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1def",
     "plate": "JRX5423",
     "date": "2022-01-03T09:35:00.000Z",
-    "vehicle": "63e3a51547bedba579c309c7",
+    "vehicle": {
+    "_id": "63e3a51547bedba579c309c7",
+    "plate": "JRX5423",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "CARGO 1317",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FORD",
+    "color": "BRANCO",
+    "tankCapacity": 251,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 167.76,
     "price": 900.04,
     "fuelType": "Diesel",
@@ -8892,7 +9452,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df0",
     "plate": "RNF6G73",
     "date": "2022-01-03T09:35:00.000Z",
-    "vehicle": "63e3a5ac47bedba579c30fd5",
+    "vehicle": {
+    "_id": "63e3a5ac47bedba579c30fd5",
+    "plate": "RNF6G73",
+    "type": "Passeios/Utilitários",
+    "model": "VW/GOL 1.6L MB5",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 58,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 56.7,
     "price": 385.5,
     "fuelType": "Gasolina",
@@ -8902,7 +9476,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df1",
     "plate": "XXX0001",
     "date": "2022-01-03T09:37:00.000Z",
-    "vehicle": "63e3a54447bedba579c30ba7",
+    "vehicle": {
+    "_id": "63e3a54447bedba579c30ba7",
+    "plate": "XXX0001",
+    "type": "Máquinas e Equipamentos",
+    "model": "...",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 500,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 161.36,
     "price": 865.74,
     "fuelType": "Diesel",
@@ -8912,7 +9500,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df2",
     "plate": "RNI4A90",
     "date": "2022-01-03T10:20:00.000Z",
-    "vehicle": "63e3a5b247bedba579c31016",
+    "vehicle": {
+    "_id": "63e3a5b247bedba579c31016",
+    "plate": "RNI4A90",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VOLKSWAGEN",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 49.43,
     "price": 336.07,
     "fuelType": "Gasolina",
@@ -8922,7 +9524,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df3",
     "plate": "RNI4B03",
     "date": "2022-01-03T10:20:00.000Z",
-    "vehicle": "63e3a5b347bedba579c31020",
+    "vehicle": {
+    "_id": "63e3a5b347bedba579c31020",
+    "plate": "RNI4B03",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VOLKSWAGEN",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 49.07,
     "price": 343.44,
     "fuelType": "Gasolina",
@@ -8932,7 +9548,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df4",
     "plate": "OZK1208",
     "date": "2022-01-03T10:55:00.000Z",
-    "vehicle": "63e3a5fd47bedba579c31318",
+    "vehicle": {
+    "_id": "63e3a5fd47bedba579c31318",
+    "plate": "OZK1208",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "26420",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21af",
+    "name": "SPT 151"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 1001,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 259.03,
     "price": 1471.04,
     "fuelType": "Diesel",
@@ -8942,7 +9572,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df5",
     "plate": "RFL4E92",
     "date": "2022-01-03T11:16:00.000Z",
-    "vehicle": "63e3a5d647bedba579c3118d",
+    "vehicle": {
+    "_id": "63e3a5d647bedba579c3118d",
+    "plate": "RFL4E92",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a7",
+    "name": "Oficina Catu"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 44.01,
     "price": 307.59,
     "fuelType": "Gasolina",
@@ -8952,7 +9596,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df6",
     "plate": "RNZ1I68",
     "date": "2022-01-03T12:20:00.000Z",
-    "vehicle": "63e3a61147bedba579c313ea",
+    "vehicle": {
+    "_id": "63e3a61147bedba579c313ea",
+    "plate": "RNZ1I68",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21b2",
+    "name": "SPT 88"
+    },
+    "manufacturer": "VOLKSWAGEN",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 19,
     "price": 129.18,
     "fuelType": "Gasolina",
@@ -8962,7 +9620,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df7",
     "plate": "PLT9F48",
     "date": "2022-01-03T12:33:00.000Z",
-    "vehicle": "63e3a57047bedba579c30d73",
+    "vehicle": {
+    "_id": "63e3a57047bedba579c30d73",
+    "plate": "PLT9F48",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 30.11,
     "price": 210.76,
     "fuelType": "Gasolina",
@@ -8972,7 +9644,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df8",
     "plate": "RTB4D47",
     "date": "2022-01-03T12:55:00.000Z",
-    "vehicle": "63e3a5b747bedba579c31048",
+    "vehicle": {
+    "_id": "63e3a5b747bedba579c31048",
+    "plate": "RTB4D47",
+    "type": "Passeios/Utilitários",
+    "model": "STRADA HD WK CE E",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 25.4,
     "price": 172.69,
     "fuelType": "Gasolina",
@@ -8982,7 +9668,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1df9",
     "plate": "RFN2E98",
     "date": "2022-01-03T13:00:00.000Z",
-    "vehicle": "63e3a55a47bedba579c30c8d",
+    "vehicle": {
+    "_id": "63e3a55a47bedba579c30c8d",
+    "plate": "RFN2E98",
+    "type": "Passeios/Utilitários",
+    "model": "NﾃO IDENTIFICADO/CADASTRADO",
+    "contractId": {
+    "_id": "63e39f5a8a9e3e8731958a49",
+    "name": "Comp Sondas"
+    },
+    "manufacturer": "DESCONHECIDO",
+    "color": "BRANCA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 37.61,
     "price": 255.71,
     "fuelType": "Gasolina",
@@ -8992,7 +9692,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dfa",
     "plate": "RFU5E97",
     "date": "2022-01-03T13:29:00.000Z",
-    "vehicle": "63e3a5a447bedba579c30f85",
+    "vehicle": {
+    "_id": "63e3a5a447bedba579c30f85",
+    "plate": "RFU5E97",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "FIAT/STRADA ENDURANCE CS",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 52.24,
     "price": 365.67,
     "fuelType": "Gasolina",
@@ -9002,7 +9716,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dfb",
     "plate": "QXM9497",
     "date": "2022-01-03T13:34:00.000Z",
-    "vehicle": "63e3a59247bedba579c30ed1",
+    "vehicle": {
+    "_id": "63e3a59247bedba579c30ed1",
+    "plate": "QXM9497",
+    "type": "Passeios/Utilitários",
+    "model": "KA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FORD",
+    "color": "BRANCA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 44.92,
     "price": 305.01,
     "fuelType": "Gasolina",
@@ -9012,7 +9740,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dfc",
     "plate": "RFF3G29",
     "date": "2022-01-03T13:48:00.000Z",
-    "vehicle": "63e3a59547bedba579c30eea",
+    "vehicle": {
+    "_id": "63e3a59547bedba579c30eea",
+    "plate": "RFF3G29",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "PRATA",
+    "tankCapacity": 58,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 46.46,
     "price": 325.2,
     "fuelType": "Gasolina",
@@ -9022,7 +9764,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dfd",
     "plate": "RNZ0E82",
     "date": "2022-01-03T13:50:00.000Z",
-    "vehicle": "63e3a5b447bedba579c3102a",
+    "vehicle": {
+    "_id": "63e3a5b447bedba579c3102a",
+    "plate": "RNZ0E82",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VOLKSWAGEN",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 49,
     "price": 333.18,
     "fuelType": "Gasolina",
@@ -9032,7 +9788,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dfe",
     "plate": "RFI2F30",
     "date": "2022-01-03T13:54:00.000Z",
-    "vehicle": "63e3a59647bedba579c30ef9",
+    "vehicle": {
+    "_id": "63e3a59647bedba579c30ef9",
+    "plate": "RFI2F30",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 41.65,
     "price": 283.22,
     "fuelType": "Gasolina",
@@ -9042,7 +9812,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1dff",
     "plate": "RNI6B76",
     "date": "2022-01-03T14:43:00.000Z",
-    "vehicle": "63e3a61247bedba579c313f9",
+    "vehicle": {
+    "_id": "63e3a61247bedba579c313f9",
+    "plate": "RNI6B76",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21b3",
+    "name": "SPT 111"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 48.87,
     "price": 332.28,
     "fuelType": "Gasolina",
@@ -9052,7 +9836,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e00",
     "plate": "RFS2F07",
     "date": "2022-01-03T14:52:00.000Z",
-    "vehicle": "63e3a5f647bedba579c312d7",
+    "vehicle": {
+    "_id": "63e3a5f647bedba579c312d7",
+    "plate": "RFS2F07",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21ad",
+    "name": "SPT 115"
+    },
+    "manufacturer": "VW",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 44.73,
     "price": 304.12,
     "fuelType": "Gasolina",
@@ -9062,7 +9860,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e01",
     "plate": "XXX0202",
     "date": "2022-01-03T15:02:00.000Z",
-    "vehicle": "63e3a5cc47bedba579c3111f",
+    "vehicle": {
+    "_id": "63e3a5cc47bedba579c3111f",
+    "plate": "XXX0202",
+    "type": "Passeios/Utilitários",
+    "model": "CHEV/ONIX JOY",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a5",
+    "name": "Logistica BA"
+    },
+    "manufacturer": "CHEVROLET",
+    "color": "ND",
+    "tankCapacity": 550,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 33.13,
     "price": 231.86,
     "fuelType": "Gasolina",
@@ -9072,7 +9884,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e02",
     "plate": "PJJ9132",
     "date": "2022-01-03T15:23:00.000Z",
-    "vehicle": "63e3a51d47bedba579c30a17",
+    "vehicle": {
+    "_id": "63e3a51d47bedba579c30a17",
+    "plate": "PJJ9132",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "2729 2P",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "MERCEDES-BENZ",
+    "color": "BRANCO",
+    "tankCapacity": 1401,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 175.88,
     "price": 940.78,
     "fuelType": "Diesel",
@@ -9082,7 +9908,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e03",
     "plate": "XXX0007",
     "date": "2022-01-03T15:29:00.000Z",
-    "vehicle": "63e3a54747bedba579c30bc5",
+    "vehicle": {
+    "_id": "63e3a54747bedba579c30bc5",
+    "plate": "XXX0007",
+    "type": "Máquinas e Equipamentos",
+    "model": ".",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 500,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 39.87,
     "price": 211.27,
     "fuelType": "Diesel",
@@ -9092,7 +9932,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e04",
     "plate": "RNZ6E07",
     "date": "2022-01-03T16:03:00.000Z",
-    "vehicle": "63e3a5b647bedba579c3103e",
+    "vehicle": {
+    "_id": "63e3a5b647bedba579c3103e",
+    "plate": "RNZ6E07",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VOLKSWAGEN",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 56,
     "price": 380.76,
     "fuelType": "Gasolina",
@@ -9102,7 +9956,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e05",
     "plate": "QQW6650",
     "date": "2022-01-03T16:16:00.000Z",
-    "vehicle": "63e3a58247bedba579c30e2c",
+    "vehicle": {
+    "_id": "63e3a58247bedba579c30e2c",
+    "plate": "QQW6650",
+    "type": "Passeios/Utilitários",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 58,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 39.71,
     "price": 270.03,
     "fuelType": "Gasolina",
@@ -9112,7 +9980,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e06",
     "plate": "RNP4I54",
     "date": "2022-01-03T16:25:00.000Z",
-    "vehicle": "63e3a55c47bedba579c30ca6",
+    "vehicle": {
+    "_id": "63e3a55c47bedba579c30ca6",
+    "plate": "RNP4I54",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT/ARGO 1.0",
+    "contractId": {
+    "_id": "63e39f5a8a9e3e8731958a49",
+    "name": "Comp Sondas"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 58,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 39.63,
     "price": 269.44,
     "fuelType": "Gasolina",
@@ -9122,7 +10004,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e07",
     "plate": "PLS0C38",
     "date": "2022-01-03T16:35:00.000Z",
-    "vehicle": "63e3a60b47bedba579c313ae",
+    "vehicle": {
+    "_id": "63e3a60b47bedba579c313ae",
+    "plate": "PLS0C38",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "ATRON 1635",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21b1",
+    "name": "SPT 76"
+    },
+    "manufacturer": "M.BENZ",
+    "color": "BRANCA",
+    "tankCapacity": 1000,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 299.01,
     "price": 1776.55,
     "fuelType": "Diesel",
@@ -9132,7 +10028,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e08",
     "plate": "RNF6G74",
     "date": "2022-01-03T16:38:00.000Z",
-    "vehicle": "63e3a5ac47bedba579c30fda",
+    "vehicle": {
+    "_id": "63e3a5ac47bedba579c30fda",
+    "plate": "RNF6G74",
+    "type": "Passeios/Utilitários",
+    "model": "VW/GOL 1.6L MB5",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 58,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 46.2,
     "price": 313.7,
     "fuelType": "Gasolina",
@@ -9142,7 +10052,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e09",
     "plate": "QQV6485",
     "date": "2022-01-03T16:38:00.000Z",
-    "vehicle": "63e3a52747bedba579c30a85",
+    "vehicle": {
+    "_id": "63e3a52747bedba579c30a85",
+    "plate": "QQV6485",
+    "type": "Passeios/Utilitários",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "BRANCA",
+    "tankCapacity": 56,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 18.22,
     "price": 119,
     "fuelType": "Gasolina",
@@ -9152,7 +10076,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e0a",
     "plate": "OLC1341",
     "date": "2022-01-03T16:55:00.000Z",
-    "vehicle": "63e3a51b47bedba579c30a08",
+    "vehicle": {
+    "_id": "63e3a51b47bedba579c30a08",
+    "plate": "OLC1341",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "TECTOR 240",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "IVECO",
+    "color": "BRANCA",
+    "tankCapacity": 300,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 10,
     "price": 39.8,
     "fuelType": "Arla",
@@ -9162,7 +10100,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e0b",
     "plate": "AQC1424",
     "date": "2022-01-03T16:56:00.000Z",
-    "vehicle": "63e3a51047bedba579c30990",
+    "vehicle": {
+    "_id": "63e3a51047bedba579c30990",
+    "plate": "AQC1424",
+    "type": "Máquinas e Equipamentos",
+    "model": "W",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 401,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 104.61,
     "price": 561.76,
     "fuelType": "Diesel",
@@ -9172,7 +10124,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e0c",
     "plate": "QQZ1397",
     "date": "2022-01-03T17:00:00.000Z",
-    "vehicle": "63e3a52847bedba579c30a8a",
+    "vehicle": {
+    "_id": "63e3a52847bedba579c30a8a",
+    "plate": "QQZ1397",
+    "type": "Passeios/Utilitários",
+    "model": "FORD KA S 1.0 HA C",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FORD",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 29,
     "price": 189.66,
     "fuelType": "Gasolina",
@@ -9182,7 +10148,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e0d",
     "plate": "PLO3A91",
     "date": "2022-01-03T17:16:00.000Z",
-    "vehicle": "63e3a60d47bedba579c313c7",
+    "vehicle": {
+    "_id": "63e3a60d47bedba579c313c7",
+    "plate": "PLO3A91",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "ATRON 1635",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21b2",
+    "name": "SPT 88"
+    },
+    "manufacturer": "M.BENZ",
+    "color": "BRANCA",
+    "tankCapacity": 1000,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 334.66,
     "price": 2000.97,
     "fuelType": "Diesel",
@@ -9192,7 +10172,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e0e",
     "plate": "RMH3D83",
     "date": "2022-01-03T17:28:00.000Z",
-    "vehicle": "63e3a53b47bedba579c30b4d",
+    "vehicle": {
+    "_id": "63e3a53b47bedba579c30b4d",
+    "plate": "RMH3D83",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT STRADA ENDURANCE CS",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 43.26,
     "price": 279.44,
     "fuelType": "Gasolina",
@@ -9202,7 +10196,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e0f",
     "plate": "RFQ4A69",
     "date": "2022-01-03T17:30:00.000Z",
-    "vehicle": "63e3a5ec47bedba579c31269",
+    "vehicle": {
+    "_id": "63e3a5ec47bedba579c31269",
+    "plate": "RFQ4A69",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21ab",
+    "name": "SESMT"
+    },
+    "manufacturer": "VW",
+    "color": "CINZA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 45.06,
     "price": 314.98,
     "fuelType": "Gasolina",
@@ -9212,7 +10220,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e10",
     "plate": "PLX3E41",
     "date": "2022-01-03T17:57:00.000Z",
-    "vehicle": "63e3a5f347bedba579c312b4",
+    "vehicle": {
+    "_id": "63e3a5f347bedba579c312b4",
+    "plate": "PLX3E41",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "ATRON 1635",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21ad",
+    "name": "SPT 115"
+    },
+    "manufacturer": "M.BENZ",
+    "color": "BRANCA",
+    "tankCapacity": 1000,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 374.99,
     "price": 2242.08,
     "fuelType": "Diesel",
@@ -9222,7 +10244,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e11",
     "plate": "RFQ0F58",
     "date": "2022-01-03T18:08:00.000Z",
-    "vehicle": "63e3a5e647bedba579c31232",
+    "vehicle": {
+    "_id": "63e3a5e647bedba579c31232",
+    "plate": "RFQ0F58",
+    "type": "Passeios/Utilitários",
+    "model": "ARGO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21aa",
+    "name": "SE Terra Mar"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 20.88,
     "price": 154.51,
     "fuelType": "Gasolina",
@@ -9232,7 +10268,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e12",
     "plate": "RMW3F13",
     "date": "2022-01-03T18:19:00.000Z",
-    "vehicle": "63e3a53d47bedba579c30b61",
+    "vehicle": {
+    "_id": "63e3a53d47bedba579c30b61",
+    "plate": "RMW3F13",
+    "type": "Passeios/Utilitários",
+    "model": "ARGO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 58,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 33.17,
     "price": 231.21,
     "fuelType": "Gasolina",
@@ -9242,7 +10292,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e13",
     "plate": "RFL3F18",
     "date": "2022-01-03T20:52:00.000Z",
-    "vehicle": "63e3a60347bedba579c3135e",
+    "vehicle": {
+    "_id": "63e3a60347bedba579c3135e",
+    "plate": "RFL3F18",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT STRADA ENDURANCE CS",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21af",
+    "name": "SPT 151"
+    },
+    "manufacturer": "FIAT",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 42.83,
     "price": 292.53,
     "fuelType": "Gasolina",
@@ -9252,7 +10316,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e14",
     "plate": "NZV2101",
     "date": "2022-01-04T04:17:00.000Z",
-    "vehicle": "63e3a5cf47bedba579c3113d",
+    "vehicle": {
+    "_id": "63e3a5cf47bedba579c3113d",
+    "plate": "NZV2101",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "8150",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a6",
+    "name": "Logistica SE"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 280,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 94.02,
     "price": 517.96,
     "fuelType": "Diesel",
@@ -9262,7 +10340,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e15",
     "plate": "QXI8521",
     "date": "2022-01-04T06:08:00.000Z",
-    "vehicle": "63e3a53247bedba579c30aee",
+    "vehicle": {
+    "_id": "63e3a53247bedba579c30aee",
+    "plate": "QXI8521",
+    "type": "Passeios/Utilitários",
+    "model": "KA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FORD",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 48.71,
     "price": 318.6,
     "fuelType": "Gasolina",
@@ -9272,7 +10364,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e16",
     "plate": "PLT6A11",
     "date": "2022-01-04T06:34:00.000Z",
-    "vehicle": "63e3a51f47bedba579c30a2b",
+    "vehicle": {
+    "_id": "63e3a51f47bedba579c30a2b",
+    "plate": "PLT6A11",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "VW",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 43.84,
     "price": 306.84,
     "fuelType": "Gasolina",
@@ -9282,7 +10388,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e17",
     "plate": "RNF6G82",
     "date": "2022-01-04T06:54:00.000Z",
-    "vehicle": "63e3a5af47bedba579c30ffd",
+    "vehicle": {
+    "_id": "63e3a5af47bedba579c30ffd",
+    "plate": "RNF6G82",
+    "type": "Passeios/Utilitários",
+    "model": "VW/GOL 1.6L MB5",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 58,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 43.22,
     "price": 293.86,
     "fuelType": "Gasolina",
@@ -9292,7 +10412,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e18",
     "plate": "RNF6G87",
     "date": "2022-01-04T07:05:00.000Z",
-    "vehicle": "63e3a5ee47bedba579c31282",
+    "vehicle": {
+    "_id": "63e3a5ee47bedba579c31282",
+    "plate": "RNF6G87",
+    "type": "Passeios/Utilitários",
+    "model": "VW/GOL 1.6L MB5",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21ab",
+    "name": "SESMT"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 58,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 50.58,
     "price": 343.44,
     "fuelType": "Gasolina",
@@ -9302,7 +10436,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e19",
     "plate": "RFT9J39",
     "date": "2022-01-04T07:08:00.000Z",
-    "vehicle": "63e3a5a347bedba579c30f7b",
+    "vehicle": {
+    "_id": "63e3a5a347bedba579c30f7b",
+    "plate": "RFT9J39",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 58,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 47.81,
     "price": 325.06,
     "fuelType": "Gasolina",
@@ -9312,7 +10460,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e1a",
     "plate": "RFX3F67",
     "date": "2022-01-04T07:43:00.000Z",
-    "vehicle": "63e3a53947bedba579c30b3e",
+    "vehicle": {
+    "_id": "63e3a53947bedba579c30b3e",
+    "plate": "RFX3F67",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "VW",
+    "color": "CINZA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 44.82,
     "price": 292.67,
     "fuelType": "Gasolina",
@@ -9322,7 +10484,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e1b",
     "plate": "RFJ0B33",
     "date": "2022-01-04T08:03:00.000Z",
-    "vehicle": "63e3a53647bedba579c30b1b",
+    "vehicle": {
+    "_id": "63e3a53647bedba579c30b1b",
+    "plate": "RFJ0B33",
+    "type": "Passeios/Utilitários",
+    "model": "MOBI",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "BRANCA",
+    "tankCapacity": 50,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 32.76,
     "price": 213.92,
     "fuelType": "Gasolina",
@@ -9332,7 +10508,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e1c",
     "plate": "PJK7009",
     "date": "2022-01-04T08:11:00.000Z",
-    "vehicle": "63e3a51d47bedba579c30a1c",
+    "vehicle": {
+    "_id": "63e3a51d47bedba579c30a1c",
+    "plate": "PJK7009",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "ATRON 2729",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "M.",
+    "color": "BRANCO",
+    "tankCapacity": 701,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 146,
     "price": 788.4,
     "fuelType": "Diesel",
@@ -9342,7 +10532,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e1d",
     "plate": "RNF6G86",
     "date": "2022-01-04T08:30:00.000Z",
-    "vehicle": "63e3a5d447bedba579c31179",
+    "vehicle": {
+    "_id": "63e3a5d447bedba579c31179",
+    "plate": "RNF6G86",
+    "type": "Passeios/Utilitários",
+    "model": "VW/GOL 1.6L MB5",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a6",
+    "name": "Logistica SE"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 48.59,
     "price": 330.36,
     "fuelType": "Gasolina",
@@ -9352,7 +10556,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e1e",
     "plate": "OZK1208",
     "date": "2022-01-04T09:09:00.000Z",
-    "vehicle": "63e3a5fd47bedba579c31318",
+    "vehicle": {
+    "_id": "63e3a5fd47bedba579c31318",
+    "plate": "OZK1208",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "26420",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21af",
+    "name": "SPT 151"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 1001,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 238.45,
     "price": 1552.39,
     "fuelType": "Diesel",
@@ -9362,7 +10580,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e1f",
     "plate": "AQC1761",
     "date": "2022-01-04T09:18:00.000Z",
-    "vehicle": "63e3a51047bedba579c30995",
+    "vehicle": {
+    "_id": "63e3a51047bedba579c30995",
+    "plate": "AQC1761",
+    "type": "Máquinas e Equipamentos",
+    "model": "W",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 352,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 153,
     "price": 916.47,
     "fuelType": "Diesel",
@@ -9372,7 +10604,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e20",
     "plate": "JSC9592",
     "date": "2022-01-04T09:21:00.000Z",
-    "vehicle": "63e3a51547bedba579c309cc",
+    "vehicle": {
+    "_id": "63e3a51547bedba579c309cc",
+    "plate": "JSC9592",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "CARGO 2622",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FORD",
+    "color": "BRANCA",
+    "tankCapacity": 400,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 158.55,
     "price": 949.71,
     "fuelType": "Diesel",
@@ -9382,7 +10628,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e21",
     "plate": "RNI4A86",
     "date": "2022-01-04T10:02:00.000Z",
-    "vehicle": "63e3a5b147bedba579c31011",
+    "vehicle": {
+    "_id": "63e3a5b147bedba579c31011",
+    "plate": "RNI4A86",
+    "type": "Passeios/Utilitários",
+    "model": "SAVEIRO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 45.03,
     "price": 315.17,
     "fuelType": "Gasolina",
@@ -9392,7 +10652,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e22",
     "plate": "RCO9G88",
     "date": "2022-01-04T10:19:00.000Z",
-    "vehicle": "63e3a59447bedba579c30ee0",
+    "vehicle": {
+    "_id": "63e3a59447bedba579c30ee0",
+    "plate": "RCO9G88",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT STRADA HD WK CC E",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 40.94,
     "price": 283.29,
     "fuelType": "Gasolina",
@@ -9402,7 +10676,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e23",
     "plate": "RNF6G70",
     "date": "2022-01-04T10:40:00.000Z",
-    "vehicle": "63e3a61047bedba579c313e5",
+    "vehicle": {
+    "_id": "63e3a61047bedba579c313e5",
+    "plate": "RNF6G70",
+    "type": "Passeios/Utilitários",
+    "model": "VW/GOL 1.6L MB5",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21b2",
+    "name": "SPT 88"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 58,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 46.94,
     "price": 318.72,
     "fuelType": "Gasolina",
@@ -9412,7 +10700,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e24",
     "plate": "RNF6G85",
     "date": "2022-01-04T10:57:00.000Z",
-    "vehicle": "63e3a5b047bedba579c31007",
+    "vehicle": {
+    "_id": "63e3a5b047bedba579c31007",
+    "plate": "RNF6G85",
+    "type": "Passeios/Utilitários",
+    "model": "VW/GOL 1.6L MB5",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "BRANCA",
+    "tankCapacity": 58,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 25.37,
     "price": 175.54,
     "fuelType": "Gasolina",
@@ -9422,7 +10724,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e25",
     "plate": "QXQ6B19",
     "date": "2022-01-04T11:01:00.000Z",
-    "vehicle": "63e3a53447bedba579c30b02",
+    "vehicle": {
+    "_id": "63e3a53447bedba579c30b02",
+    "plate": "QXQ6B19",
+    "type": "Passeios/Utilitários",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 58,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 45.07,
     "price": 297.04,
     "fuelType": "Gasolina",
@@ -9432,7 +10748,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e26",
     "plate": "RTB5G12",
     "date": "2022-01-04T11:43:00.000Z",
-    "vehicle": "63e3a53f47bedba579c30b7a",
+    "vehicle": {
+    "_id": "63e3a53f47bedba579c30b7a",
+    "plate": "RTB5G12",
+    "type": "Passeios/Utilitários",
+    "model": "FIAT STRADA ENDURANCE CS",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "FIAT",
+    "color": "ND",
+    "tankCapacity": 60,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 40.07,
     "price": 261.66,
     "fuelType": "Gasolina",
@@ -9442,7 +10772,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e27",
     "plate": "RFP0G13",
     "date": "2022-01-04T11:44:00.000Z",
-    "vehicle": "63e3a59e47bedba579c30f44",
+    "vehicle": {
+    "_id": "63e3a59e47bedba579c30f44",
+    "plate": "RFP0G13",
+    "type": "Passeios/Utilitários",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "ND",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 44.29,
     "price": 300.73,
     "fuelType": "Gasolina",
@@ -9452,7 +10796,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e28",
     "plate": "UCA0101",
     "date": "2022-01-04T11:46:00.000Z",
-    "vehicle": "63e3a54347bedba579c30ba2",
+    "vehicle": {
+    "_id": "63e3a54347bedba579c30ba2",
+    "plate": "UCA0101",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "NﾃO IDENTIFICADO/CADASTRADO",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCA",
+    "tankCapacity": 500,
+    "isActive": true,
+    "__v": 0
+    },
     "quantity": 180.64,
     "price": 987,
     "fuelType": "Diesel",
@@ -9462,7 +10820,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e29",
     "plate": "NTU0H90",
     "date": "2022-01-04T11:47:00.000Z",
-    "vehicle": "63e3a51a47bedba579c309f9",
+    "vehicle": {
+    "_id": "63e3a51a47bedba579c309f9",
+    "plate": "NTU0H90",
+    "type": "Passeios/Utilitários",
+    "model": "145 3P",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e219c",
+    "name": "ATPN Geral"
+    },
+    "manufacturer": "N",
+    "color": "BRANCO",
+    "tankCapacity": 301,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 113.27,
     "price": 619.02,
     "fuelType": "Diesel",
@@ -9472,7 +10844,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e2a",
     "plate": "QXM0479",
     "date": "2022-01-04T12:41:00.000Z",
-    "vehicle": "63e3a59247bedba579c30ecc",
+    "vehicle": {
+    "_id": "63e3a59247bedba579c30ecc",
+    "plate": "QXM0479",
+    "type": "Passeios/Utilitários",
+    "model": "GOL",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "VW",
+    "color": "PRATA",
+    "tankCapacity": 55,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 41.5,
     "price": 287.17,
     "fuelType": "Gasolina",
@@ -9482,7 +10868,21 @@ export const refuelData = [
     "_id": "63e400f28d6e99be891d1e2b",
     "plate": "PLT9F48",
     "date": "2022-01-04T12:43:00.000Z",
-    "vehicle": "63e3a57047bedba579c30d73",
+    "vehicle": {
+    "_id": "63e3a57047bedba579c30d73",
+    "plate": "PLT9F48",
+    "type": "Caminhões e Micro-ônibus",
+    "model": "STRADA",
+    "contractId": {
+    "_id": "63e39ee09afc9c5b4f7e21a4",
+    "name": "Integridade"
+    },
+    "manufacturer": "FIAT",
+    "color": "PRATA",
+    "tankCapacity": 60,
+    "isActive": false,
+    "__v": 0
+    },
     "quantity": 42.46,
     "price": 297.22,
     "fuelType": "Gasolina",
