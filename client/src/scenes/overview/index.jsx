@@ -4,21 +4,24 @@ import OverviewChart from "../../components/OverviewChart";
 import Header from "../../components/Header";
 
 const Overview = () => {
-  const [view, setView] = useState("all");
+  const [view, setView] = useState("2022");
 
 
   const theme = useTheme();
 
   return (
-    <Box m="1.5rem 2rem">
-      <Header title="OVERVIEW" subtitle="A overview for the sales in 2021" />
+    <Box m="1.5rem 2rem"  >
+      <Header title="CONSUMO GERAL" subtitle="Uma visão do consumo total de combustível." />
       <Box height="75vh">
         <FormControl
           sx={{
             mt: "1rem",
+
           }}
         >
-          <InputLabel>View</InputLabel>
+          <InputLabel 
+            sx={{borderColor:"black"}}
+          >View</InputLabel>
           <Select
             value={view}
             label="view"
@@ -29,8 +32,8 @@ const Overview = () => {
             
             }}
           >
-            <MenuItem value="all">Todos</MenuItem>
-            <MenuItem value="units">Units</MenuItem>
+            <MenuItem value="2022">2022</MenuItem>
+            <MenuItem value="2023">2023</MenuItem>
           </Select>
         </FormControl>
         <OverviewChart view={view} />
