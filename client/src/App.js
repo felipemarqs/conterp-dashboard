@@ -12,6 +12,7 @@ import Layout from './scenes/layout'
 import Dashboard from './scenes/dashboard'
 import Contract from './scenes/contract'
 import CreateContract from './scenes/contract/create'
+import CreateVehicle from './scenes/vehicle/create'
 import Vehicle from './scenes/vehicle'
 import Overview from "./scenes/overview";
 //
@@ -29,7 +30,8 @@ function App() {
               <Route path="/" element={<Navigate to="/dashboard" replace/>}/>
               <Route path="/dashboard" element={<Dashboard/>}/>
               <Route path="/contract" element={<Contract/>}/>
-              <Route path="/createcontract" element={<CreateContract/>}/>              
+              <Route path="/createcontract" element={<CreateContract/>}/>
+              <Route path="/createvehicle" element={<CreateVehicle/>}/>                
               <Route path="/vehicle" element={<Vehicle/>}/>
               <Route path="/overview" element={<Overview/>}/>
 

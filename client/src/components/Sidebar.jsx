@@ -55,7 +55,8 @@ const navItems = [
     icon: <TableRowsOutlinedIcon />,
   },
   {
-    text: "Costumers",
+    text: "Cadastrar Veículo",
+    navigateText: "createvehicle",
     icon: <Groups2Outlined />,
   },
   {
