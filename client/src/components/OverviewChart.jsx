@@ -6,48 +6,43 @@ import { useGetRefuelQuery } from "../state/api.js";
 
 const OverviewChart = ({ isDashboard = false, view }) => {
   const { data, isLoading } = useGetRefuelQuery();
-  //console.log("data", data);
-  //const { data, isLoading } = useGetRefuelQuery();
+  console.log("data", data);
 
   const theme = useTheme();
 
   const treatData = (data) => {
-
     if (!data) {
-      return []
+      return [];
     }
 
-    console.log("view", view)
+    console.log("view", view);
 
     const groupedData = data.reduce((acc, refuel) => {
-      
-
       const date = new Date(refuel.date);
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
 
-      if ( view === year.toString()) {
+      if (view === year.toString()) {
         //console.log("year", year);
-      const key = `${year}-${month}-${refuel.fuelType}`;
+        const key = `${year}-${month}-${refuel.fuelType}`;
 
-      const stringFuelType = refuel.fuelType;
-      const [stringFueltypeFormatted] = stringFuelType.split(" ");
+        const stringFuelType = refuel.fuelType;
+        const [stringFueltypeFormatted] = stringFuelType.split(" ");
 
-      if (!acc[key]) {
-        acc[key] = {
-          date: refuel.date,
-          fuelType: stringFueltypeFormatted,
-          quantity: refuel.quantity,
-        };
-      } else {
-        acc[key].quantity += refuel.quantity;
+        if (!acc[key]) {
+          acc[key] = {
+            date: refuel.date,
+            fuelType: stringFueltypeFormatted,
+            quantity: refuel.quantity,
+          };
+        } else {
+          acc[key].quantity += refuel.quantity;
+        }
+
+        return acc;
       }
 
       return acc;
-      }
-      
-      return acc
-      
     }, {});
 
     const array = Object.values(groupedData);
@@ -102,9 +97,9 @@ const OverviewChart = ({ isDashboard = false, view }) => {
 
     return chartData;
   };
-  const lineChartData = treatData(data)
+  const lineChartData = treatData(data);
 
-  console.log("lineChartData", lineChartData)
+  console.log("lineChartData", lineChartData);
 
   return (
     <ResponsiveLine
@@ -183,9 +178,9 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       pointBorderWidth={2}
       pointBorderColor={{ from: "serieColor" }}
       enablePointLabel={true}
-      pointLabel={ (t) => {       
-          return  `${t.y.toFixed()}`       
-      }  }
+      pointLabel={(t) => {
+        return `${t.y.toFixed()}`;
+      }}
       pointLabelYOffset={-20}
       useMesh={true}
       lineWidth={!isDashboard ? 5 : 2}

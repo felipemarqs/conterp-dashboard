@@ -16,8 +16,8 @@ import Refuel from "./models/Refuel.js";
 import { contractData } from "./data/index.js";
 
 import contractRoutes from "./routes/contract.js";
-import vehicleRoutes from  './routes/vehicle.js';
-import refuelRoutes from './routes/refuel.js';
+import vehicleRoutes from "./routes/vehicle.js";
+import refuelRoutes from "./routes/refuel.js";
 
 /*Configurando o servidor*/
 
@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -39,9 +39,7 @@ app.use((req, res, next) => {
   );
   
   next();
-});
-
-
+}); */
 
 /* Rotas */
 app.use("/contract", contractRoutes);
@@ -53,7 +51,7 @@ app.use("/refuel", refuelRoutes);
 const PORT = process.env.PORT || 9000;
 
 //Importing data from Excel
-let workbook = xlsx.readFile("./data/excelFiles/refuel.xlsx");
+/* let workbook = xlsx.readFile("./data/excelFiles/refuel.xlsx");
 
 let worksheet = workbook.Sheets[workbook.SheetNames[0]];
 
@@ -80,9 +78,9 @@ const insertVehicle = async () => {
   contract[0].vehicles.push(newVehicleDb[0]._id);
 
   await contract[0].save();
-};
+}; */
 
-const insertRefuelData = async () => {
+/* const insertRefuelData = async () => {
   const refuelData = [];
 
   function ExcelDateToJSDate(date) {
@@ -115,7 +113,7 @@ const insertRefuelData = async () => {
   }
 
   Refuel.insertMany(refuelData);
-};
+}; */
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -124,7 +122,7 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`Server running in port ${PORT}`);
+      console.log(`Connected to MongoDb Server running in port ${PORT}`);
       //Insert data to Database (ONLY RUN IT ONCE!!)
       //Contract.insertMany(contractData)
 
