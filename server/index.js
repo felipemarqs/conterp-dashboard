@@ -51,15 +51,61 @@ app.use("/refuel", refuelRoutes);
 const PORT = process.env.PORT || 9000;
 
 //Importing data from Excel
-/* let workbook = xlsx.readFile("./data/excelFiles/refuel.xlsx");
+let workbook = xlsx.readFile("./data/excelFiles/fleetUpdate.xlsx");
 
 let worksheet = workbook.Sheets[workbook.SheetNames[0]];
 
 const insertVehicle = async () => {
-  const contract = await Contract.find({ name: "Integridade" });
-  const contractId = contract[0]._id;
 
-  await Vehicle.create({
+  const cars = []
+
+  for (let i = 2; i <= 23; i++) {
+
+
+
+    const contractName = worksheet["A" + i].v;
+    const plate = worksheet["B" + i].v;
+    const type = worksheet["C" + i].v;
+    const manufacturer = worksheet["D" + i].v;
+    const model = worksheet["E" + i].v;
+    const color = worksheet["F" + i].v;
+    const tankCapacity = worksheet["H" + i].v;
+    const year = worksheet["I" + i].v;
+
+    const [contract] = await Contract.find({ name: contractName });
+    const contractId = contract._id;
+
+    await Vehicle.create({
+      contractId: contractId,
+      plate: plate,
+      type: type,
+      manufacturer: manufacturer,
+      model: model,
+      color: color,
+      tankCapacity:parseInt(tankCapacity),
+      year: parseInt(year),
+    });
+  
+    const [newVehicleDb] = await Vehicle.find({ plate: plate });
+    console.log("novo carro:", newVehicleDb);
+  
+    contract.vehicles.push(newVehicleDb._id);
+  
+    await contract.save(); 
+    //const vehicle = await Vehicle.find({ plate: plate });
+
+
+
+
+  }
+
+
+
+
+  /* const contract = await Contract.find({ name: "Integridade" });
+  const contractId = contract[0]._id; */
+
+ /*  await Vehicle.create({
     contractId: contractId,
     contract: "Integridade",
     plate: "RTV7A56",
@@ -77,8 +123,8 @@ const insertVehicle = async () => {
 
   contract[0].vehicles.push(newVehicleDb[0]._id);
 
-  await contract[0].save();
-}; */
+  await contract[0].save(); */
+};
 
 /* const insertRefuelData = async () => {
   const refuelData = [];
