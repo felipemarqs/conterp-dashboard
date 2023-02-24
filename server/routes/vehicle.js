@@ -1,10 +1,11 @@
 import express from 'express'
 
-import { getVehicles } from '../controllers/vehicle.js'
+import { getVehicles,postVehicle } from '../controllers/vehicle.js'
 
 const router = express.Router()
 
 router.get("/list" , getVehicles)
+router.post("/create" , postVehicle)
 
 
 
