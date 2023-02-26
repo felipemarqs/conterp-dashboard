@@ -10,7 +10,6 @@ export const getVehicles = async (req, res) => {
   }
 };
 
-
 export const postVehicle = async (req, res) => {
   const {
     contractName,
@@ -23,15 +22,28 @@ export const postVehicle = async (req, res) => {
     year,
   } = req.body;
 
-  const vehicleExists = await Vehicle.find({ plate: plate });
+  console.log("asasasasas",
+    contractName
+  );
+
+  const tankCapacityNumber = parseInt(tankCapacity)
+  const yearNumber = parseInt(year)
+
+  const [vehicleExists] = await Vehicle.find({ plate: plate });
 
   if (vehicleExists) {
-    res.json({ Error: 'Veículo já cadastrado!'})
-    return 
+    res.status(404).json({ error: "Veículo já cadastrado!" });
+    return;
   }
+
 
   try {
     const [contract] = await Contract.find({ name: contractName });
+
+    if (!contract) {
+      res.status(404).json({ error: "Contrato não cadastrado" });
+      return
+    }
     const contractId = contract._id;
     await Vehicle.create({
       contractId: contractId,
@@ -41,17 +53,15 @@ export const postVehicle = async (req, res) => {
       manufacturer: manufacturer,
       model: model,
       color: color,
-      tankCapacity: tankCapacity,
-      year: year,
+      tankCapacity: tankCapacityNumber,
+      year: yearNumber,
     });
 
     const [newVehicle] = await Vehicle.find({ plate: plate });
-
     contract.vehicles.push(newVehicle._id);
-
     await contract.save();
-    res.status(200).json({newVehicle , contract})
+    res.status(200).json({ newVehicle, contract });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 };

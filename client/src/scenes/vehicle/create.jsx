@@ -14,24 +14,41 @@ import {
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
+import { useCreateVehicleMutation } from "../../state/api.js";
 
 const CreateVehicle = () => {
+  const [createVehicleMutation, data] = useCreateVehicleMutation();
+  console.log("data", data);
   const [contract, setContract] = useState("");
+  /* const [newVehicle, setNewVehicle] = useState({
+    plate: "",
+    color: "",
+    contractName: "",
+    manufacturer: "",
+    model: "",
+    tankCapacity:"",
+    type: "",
+    year: ""
+  }) 
+ */
   const theme = useTheme();
 
-  
-
-  const handleFormSubmit = (values) => {
-    console.log(values);
-    console.log("clicouy")
-    window.alert(values)
+  const handleFormSubmit = async (values) => {
+    console.log("clicouy");
+    console.log("Contrato:",contract);
+    console.log("Values:", values)
+    
+    const vehicle = {
+      ...values, contractName: contract
+    }
+    await createVehicleMutation(vehicle);
   };
 
   const initialValues = {
     plate: "",
     type: "",
     model: "",
-    contractName: contract,
+    contractName: "",
     manufacturer: "",
     color: "",
     year: "",
@@ -39,18 +56,16 @@ const CreateVehicle = () => {
   };
 
   const vechileSchema = yup.object().shape({
-    plate: yup.string().required("required"),
+    plate: yup.string().required("required").min(7, "Placa inválida!").max(7, "Placa inválida"),
     type: yup.string().required("required"),
     model: yup.string().required("required"),
     manufacturer: yup.string().required("required"),
-    color: yup.string().required("required"),
+    color: yup.string(),
     year: yup.string().required("required"),
     tankCapacity: yup.string().required("required"),
   });
 
   const isNonMobile = useMediaQuery("(min-width:600px)");
-
-
 
   return (
     <Box m="1.5rem 2rem">
@@ -76,7 +91,7 @@ const CreateVehicle = () => {
               backgroundColor={theme.palette.primary[500]}
               borderRadius="10px"
               margin="1rem  auto"
-              maxWidth={isNonMobile ? "1000px" : undefined }
+              maxWidth={isNonMobile ? "1000px" : undefined}
               gap="30px"
               gridTemplateColumns="repeat(4, minmax(0, 1fr))"
               sx={{
@@ -132,49 +147,44 @@ const CreateVehicle = () => {
                 }}
               />
 
-              <FormControl
+              <InputLabel sx={{ borderColor: "black" }}>Contrato</InputLabel>
+              <Select
+                label="Contrato"
+                name="contractName"
+                value={contract}
+                onChange={(e) => setContract(e.target.value)}
                 sx={{
-                  gridColumn: "span 2",
+                  color: "white",
+                  borderColor: theme.palette.primary[500],
                 }}
               >
-                <InputLabel sx={{ borderColor: "black" }}>Contrato</InputLabel>
-                <Select
-                  label="Contrato"
-                  value={contract}
-                  onChange={(e) => setContract(e.target.value)}
-                  sx={{
-                    color: "white",
-                    borderColor: theme.palette.primary[500],
-                  }}
-                >
-                  <MenuItem value="ADM Geral">ADM Geral</MenuItem>
-                  <MenuItem value="ATPN Geral">ATPN Geral</MenuItem>
-                  <MenuItem value="Braskem">Braskem</MenuItem>
-                  <MenuItem value="Caldeiraria">Caldeiraria</MenuItem>
-                  <MenuItem value="Cavalo Marinho">Cavalo Marinho</MenuItem>
-                  <MenuItem value="CIPO UMIP">CIPO UMIP</MenuItem>
-                  <MenuItem value="Comp Manut Int">Comp Manut Int</MenuItem>
-                  <MenuItem value="DOW Quimica">DOW Quimica</MenuItem>
-                  <MenuItem value="Estacao Fluido">Estacao Fluido</MenuItem>
-                  <MenuItem value="Integridade">Integridade</MenuItem>
-                  <MenuItem value="Logistica BA">Logistica BA</MenuItem>
-                  <MenuItem value="Logistica SE">Logistica SE</MenuItem>
-                  <MenuItem value="Oficina Catu">Oficina Catu</MenuItem>
-                  <MenuItem value="Origem">Origem</MenuItem>
-                  <MenuItem value="Pintura Macae">Pintura Macae</MenuItem>
-                  <MenuItem value="SE Terra Mar">SE Terra Mar</MenuItem>
-                  <MenuItem value="SESMT">SESMT</MenuItem>
-                  <MenuItem value="Sonolog">Sonolog</MenuItem>
-                  <MenuItem value="SPT 115">SPT 115</MenuItem>
-                  <MenuItem value="SPT 151">SPT 151</MenuItem>
-                  <MenuItem value="SPT 60">SPT 60</MenuItem>
-                  <MenuItem value="SPT 76">SPT 76</MenuItem>
-                  <MenuItem value="SPT 88">SPT 88</MenuItem>
-                  <MenuItem value="SPT 54">SPT 54</MenuItem>
-                  <MenuItem value="Usinagem">Usinagem</MenuItem>
-                  <MenuItem value="Comp Sondas">Comp Sondas</MenuItem>
-                </Select>
-              </FormControl>
+                <MenuItem value="ADM Geral">ADM Geral</MenuItem>
+                <MenuItem value="ATPN Geral">ATPN Geral</MenuItem>
+                <MenuItem value="Braskem">Braskem</MenuItem>
+                <MenuItem value="Caldeiraria">Caldeiraria</MenuItem>
+                <MenuItem value="Cavalo Marinho">Cavalo Marinho</MenuItem>
+                <MenuItem value="CIPO UMIP">CIPO UMIP</MenuItem>
+                <MenuItem value="Comp Manut Int">Comp Manut Int</MenuItem>
+                <MenuItem value="DOW Quimica">DOW Quimica</MenuItem>
+                <MenuItem value="Estacao Fluido">Estacao Fluido</MenuItem>
+                <MenuItem value="Integridade">Integridade</MenuItem>
+                <MenuItem value="Logistica BA">Logistica BA</MenuItem>
+                <MenuItem value="Logistica SE">Logistica SE</MenuItem>
+                <MenuItem value="Oficina Catu">Oficina Catu</MenuItem>
+                <MenuItem value="Origem">Origem</MenuItem>
+                <MenuItem value="Pintura Macae">Pintura Macae</MenuItem>
+                <MenuItem value="SE Terra Mar">SE Terra Mar</MenuItem>
+                <MenuItem value="SESMT">SESMT</MenuItem>
+                <MenuItem value="Sonolog">Sonolog</MenuItem>
+                <MenuItem value="SPT 115">SPT 115</MenuItem>
+                <MenuItem value="SPT 151">SPT 151</MenuItem>
+                <MenuItem value="SPT 60">SPT 60</MenuItem>
+                <MenuItem value="SPT 76">SPT 76</MenuItem>
+                <MenuItem value="SPT 88">SPT 88</MenuItem>
+                <MenuItem value="SPT 54">SPT 54</MenuItem>
+                <MenuItem value="Usinagem">Usinagem</MenuItem>
+                <MenuItem value="Comp Sondas">Comp Sondas</MenuItem>
+              </Select>
 
               <TextField
                 fullWidth
@@ -238,15 +248,17 @@ const CreateVehicle = () => {
                   gridColumn: "span 2",
                 }}
               />
-
-             
             </Box>
 
-            <Box display="flex" justifyContent={isNonMobile ? "center" : "end"} mt='1rem'>
-                <Button type="submit" color="primary" variant="contained">
-                    Cadastrar veículo
-                </Button>
-              </Box>
+            <Box
+              display="flex"
+              justifyContent={isNonMobile ? "center" : "end"}
+              mt="1rem"
+            >
+              <Button type="submit" color="primary" variant="contained">
+                Cadastrar veículo
+              </Button>
+            </Box>
           </form>
         )}
       </Formik>
