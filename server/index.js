@@ -51,18 +51,14 @@ app.use("/refuel", refuelRoutes);
 const PORT = process.env.PORT || 9000;
 
 //Importing data from Excel
-let workbook = xlsx.readFile("./data/excelFiles/fleetUpdate.xlsx");
+let workbook = xlsx.readFile("./data/excelFiles/refuel@.xlsx");
 
 let worksheet = workbook.Sheets[workbook.SheetNames[0]];
 
 const insertVehicle = async () => {
-
-  const cars = []
+  const cars = [];
 
   for (let i = 2; i <= 23; i++) {
-
-
-
     const contractName = worksheet["A" + i].v;
     const plate = worksheet["B" + i].v;
     const type = worksheet["C" + i].v;
@@ -82,30 +78,23 @@ const insertVehicle = async () => {
       manufacturer: manufacturer,
       model: model,
       color: color,
-      tankCapacity:parseInt(tankCapacity),
+      tankCapacity: parseInt(tankCapacity),
       year: parseInt(year),
     });
-  
+
     const [newVehicleDb] = await Vehicle.find({ plate: plate });
     console.log("novo carro:", newVehicleDb);
-  
+
     contract.vehicles.push(newVehicleDb._id);
-  
-    await contract.save(); 
+
+    await contract.save();
     //const vehicle = await Vehicle.find({ plate: plate });
-
-
-
-
   }
-
-
-
 
   /* const contract = await Contract.find({ name: "Integridade" });
   const contractId = contract[0]._id; */
 
- /*  await Vehicle.create({
+  /*  await Vehicle.create({
     contractId: contractId,
     contract: "Integridade",
     plate: "RTV7A56",
@@ -126,16 +115,15 @@ const insertVehicle = async () => {
   await contract[0].save(); */
 };
 
-/* const insertRefuelData = async () => {
+const insertRefuelData = async () => {
   const refuelData = [];
 
   function ExcelDateToJSDate(date) {
     return new Date(Math.round((date - 25569) * 86400 * 1000));
   }
 
-  for (let i = 2; i <= 15042; i++) {
+  for (let i = 5; i <= 823; i++) {
     console.log("Veículo atual", i - 1);
-
     const plate = worksheet["A" + i].v;
     const date = worksheet["B" + i].v;
     const quantity = worksheet["C" + i].v;
@@ -144,22 +132,24 @@ const insertVehicle = async () => {
 
     console.log(plate);
 
-    const vehicle = await Vehicle.find({ plate: plate });
+    const [vehicle] = await Vehicle.find({ plate: plate });
 
-    const vehicleId = vehicle[0]._id;
+    if (vehicle) {
+      const vehicleId = vehicle._id;
 
-    refuelData.push({
-      plate: plate,
-      date: ExcelDateToJSDate(date),
-      vehicle: vehicleId,
-      quantity: quantity,
-      price: price,
-      fuelType: fuelType,
-    });
+      refuelData.push({
+        plate: plate,
+        date: ExcelDateToJSDate(date),
+        vehicle: vehicleId,
+        quantity: quantity,
+        price: price,
+        fuelType: fuelType,
+      });
+    }
   }
 
   Refuel.insertMany(refuelData);
-}; */
+};
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -173,7 +163,7 @@ mongoose
       //Contract.insertMany(contractData)
 
       //insertRefuelData();
-      //insertVehicle()
+      //insertVehicle();
     });
   })
   .catch((error) => console.log(`${error} not connected`));

@@ -172,7 +172,6 @@ const Vehicle = () => {
               <MenuItem value="Comp Sondas">Comp Sondas</MenuItem>
             </Select>
           </Box>
-
           <DataGrid
             loading={isLoading || !data}
             getRowId={(row) => row._id}

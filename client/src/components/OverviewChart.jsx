@@ -4,7 +4,11 @@ import { useTheme } from "@mui/material";
 
 import { useGetRefuelQuery } from "../state/api.js";
 
-const OverviewChart = ({ isDashboard = false, view }) => {
+const OverviewChart = ({
+  isDashboard = false,
+  selectedYear,
+  selectedContract = "SPT 60",
+}) => {
   const { data, isLoading } = useGetRefuelQuery();
 
   const theme = useTheme();
@@ -13,32 +17,58 @@ const OverviewChart = ({ isDashboard = false, view }) => {
     if (!data) {
       return [];
     }
-
     const groupedData = data.reduce((acc, refuel) => {
       const date = new Date(refuel.date);
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
 
-      if (view === year.toString()) {
-        const key = `${year}-${month}-${refuel.fuelType}`;
+      if (selectedContract === "all") {
+        if (selectedYear === year.toString()) {
+          const key = `${year}-${month}-${refuel.fuelType}`;
 
-        const stringFuelType = refuel.fuelType;
-        const [stringFueltypeFormatted] = stringFuelType.split(" ");
+          const stringFuelType = refuel.fuelType;
+          const [stringFueltypeFormatted] = stringFuelType.split(" ");
 
-        if (!acc[key]) {
-          acc[key] = {
-            date: refuel.date,
-            fuelType: stringFueltypeFormatted,
-            quantity: refuel.quantity,
-          };
-        } else {
-          acc[key].quantity += refuel.quantity;
+          if (!acc[key]) {
+            acc[key] = {
+              date: refuel.date,
+              fuelType: stringFueltypeFormatted,
+              quantity: refuel.quantity,
+            };
+          } else {
+            acc[key].quantity += refuel.quantity;
+          }
+
+          return acc;
         }
 
         return acc;
+      } else {
+        if (
+          selectedYear === year.toString() &&
+          selectedContract === refuel.vehicle.contractId.name
+        ) {
+          if (selectedYear === year.toString()) {
+        
+            const key = `${year}-${month}-${refuel.fuelType}`;
+    
+            const stringFuelType = refuel.fuelType;
+            const [stringFueltypeFormatted] = stringFuelType.split(" ");
+    
+            if (!acc[key]) {
+              acc[key] = {
+                date: refuel.date,
+                fuelType: stringFueltypeFormatted,
+                quantity: refuel.quantity,
+              };
+            } else {
+              acc[key].quantity += refuel.quantity;
+            }
+            return acc;
+          }
+        }
+        return acc;
       }
-
-      return acc;
     }, {});
 
     const array = Object.values(groupedData);
@@ -47,7 +77,6 @@ const OverviewChart = ({ isDashboard = false, view }) => {
 
     array.forEach((refuel) => {
       const date = new Date(refuel.date);
-      //const month = date.getMonth() + 1
       const year = date.getFullYear();
       const month = date.toLocaleString("default", { month: "long" });
 
@@ -143,7 +172,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       axisBottom={{
         format: (v) => {
           if (isDashboard) return v.slice(0, 3);
-          return v;
+          return v.substring(0, v.indexOf("-"))
         },
         orient: "bottom",
         tickSize: 5,

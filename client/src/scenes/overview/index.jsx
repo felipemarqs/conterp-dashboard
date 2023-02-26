@@ -36,7 +36,7 @@ const Overview = () => {
             <MenuItem value="2023">2023</MenuItem>
           </Select>
         </FormControl>
-        <OverviewChart view={view} />
+        <OverviewChart selectedYear={view} />
       
       </Box>
     </Box>
