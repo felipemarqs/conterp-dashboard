@@ -20,17 +20,7 @@ const CreateVehicle = () => {
   const [createVehicleMutation, data] = useCreateVehicleMutation();
   console.log("data", data);
   const [contract, setContract] = useState("");
-  /* const [newVehicle, setNewVehicle] = useState({
-    plate: "",
-    color: "",
-    contractName: "",
-    manufacturer: "",
-    model: "",
-    tankCapacity:"",
-    type: "",
-    year: ""
-  }) 
- */
+
   const theme = useTheme();
 
   const handleFormSubmit = async (values) => {

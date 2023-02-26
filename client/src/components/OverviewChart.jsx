@@ -6,7 +6,6 @@ import { useGetRefuelQuery } from "../state/api.js";
 
 const OverviewChart = ({ isDashboard = false, view }) => {
   const { data, isLoading } = useGetRefuelQuery();
-  console.log("data", data);
 
   const theme = useTheme();
 
@@ -15,15 +14,12 @@ const OverviewChart = ({ isDashboard = false, view }) => {
       return [];
     }
 
-    console.log("view", view);
-
     const groupedData = data.reduce((acc, refuel) => {
       const date = new Date(refuel.date);
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
 
       if (view === year.toString()) {
-        //console.log("year", year);
         const key = `${year}-${month}-${refuel.fuelType}`;
 
         const stringFuelType = refuel.fuelType;
@@ -92,14 +88,9 @@ const OverviewChart = ({ isDashboard = false, view }) => {
         });
       }
     });
-
-    //console.log("result", chartData)
-
     return chartData;
   };
   const lineChartData = treatData(data);
-
-  console.log("lineChartData", lineChartData);
 
   return (
     <ResponsiveLine
@@ -220,10 +211,3 @@ const OverviewChart = ({ isDashboard = false, view }) => {
 };
 
 export default OverviewChart;
-
-/* // Creating a date object
-var today = new Date();
-
-// Getting full month name (e.g. "June")
-var month = today.toLocaleString('default', { month: 'long' });
-console.log(month); */
