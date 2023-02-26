@@ -15,6 +15,7 @@ import CreateContract from './scenes/contract/create'
 import CreateVehicle from './scenes/vehicle/create'
 import Vehicle from './scenes/vehicle'
 import Overview from "./scenes/overview";
+import OverviewValue from "scenes/overviewValue";
 //
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path="/createvehicle" element={<CreateVehicle/>}/>                
               <Route path="/vehicle" element={<Vehicle/>}/>
               <Route path="/overview" element={<Overview/>}/>
+              <Route path="/overviewvalue" element={<OverviewValue/>}/>
 
 
           </Route>

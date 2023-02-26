@@ -18,19 +18,15 @@ import { useCreateVehicleMutation } from "../../state/api.js";
 
 const CreateVehicle = () => {
   const [createVehicleMutation, data] = useCreateVehicleMutation();
-  console.log("data", data);
   const [contract, setContract] = useState("");
 
   const theme = useTheme();
 
   const handleFormSubmit = async (values) => {
-    console.log("clicouy");
-    console.log("Contrato:",contract);
-    console.log("Values:", values)
-    
     const vehicle = {
-      ...values, contractName: contract
-    }
+      ...values,
+      contractName: contract,
+    };
     await createVehicleMutation(vehicle);
   };
 
@@ -46,7 +42,11 @@ const CreateVehicle = () => {
   };
 
   const vechileSchema = yup.object().shape({
-    plate: yup.string().required("required").min(7, "Placa inválida!").max(7, "Placa inválida"),
+    plate: yup
+      .string()
+      .required("required")
+      .min(7, "Placa inválida!")
+      .max(7, "Placa inválida"),
     type: yup.string().required("required"),
     model: yup.string().required("required"),
     manufacturer: yup.string().required("required"),
@@ -146,6 +146,7 @@ const CreateVehicle = () => {
                 sx={{
                   color: "white",
                   borderColor: theme.palette.primary[500],
+                  gridColumn: "span 1",
                 }}
               >
                 <MenuItem value="ADM Geral">ADM Geral</MenuItem>

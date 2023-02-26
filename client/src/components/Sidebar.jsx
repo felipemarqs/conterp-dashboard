@@ -30,6 +30,9 @@ import {
   PieChartOutlined,
 } from "@mui/icons-material";
 
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
+import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
+
 import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
@@ -94,13 +97,14 @@ const navItems = [
     icon: null,
   },
   {
-    text: "Overview",
+    text: "Visão Consumo",
     navigateText: "overview",
-    icon: <AdminPanelSettingsOutlined />,
+    icon: <LocalGasStationIcon />,
   },
   {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
+    text: "Visão gasto",
+    navigateText: "overviewvalue",
+    icon: <AttachMoneyOutlinedIcon />,
   },
 ];
 

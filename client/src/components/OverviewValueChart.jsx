@@ -4,7 +4,7 @@ import { useTheme } from "@mui/material";
 
 import { useGetRefuelQuery } from "../state/api.js";
 
-const OverviewChart = ({
+const OverviewValueChart = ({
   isDashboard = false,
   selectedYear,
   selectedContract = "all",
@@ -24,7 +24,6 @@ const OverviewChart = ({
 
       if (selectedContract === "all") {
         if (selectedYear === year.toString()) {
-
           const key = `${year}-${month}-${refuel.fuelType}`;
           const stringFuelType = refuel.fuelType;
           const [stringFueltypeFormatted] = stringFuelType.split(" ");
@@ -33,10 +32,10 @@ const OverviewChart = ({
             acc[key] = {
               date: refuel.date,
               fuelType: stringFueltypeFormatted,
-              quantity: refuel.quantity,
+              price: refuel.price,
             };
           } else {
-            acc[key].quantity += refuel.quantity;
+            acc[key].price += refuel.price;
           }
 
           return acc;
@@ -49,20 +48,19 @@ const OverviewChart = ({
           selectedContract === refuel.vehicle.contractId.name
         ) {
           if (selectedYear === year.toString()) {
-        
             const key = `${year}-${month}-${refuel.fuelType}`;
-    
+
             const stringFuelType = refuel.fuelType;
             const [stringFueltypeFormatted] = stringFuelType.split(" ");
-    
+
             if (!acc[key]) {
               acc[key] = {
                 date: refuel.date,
                 fuelType: stringFueltypeFormatted,
-                quantity: refuel.quantity,
+                price: refuel.price,
               };
             } else {
-              acc[key].quantity += refuel.quantity;
+              acc[key].price += refuel.price;
             }
             return acc;
           }
@@ -89,11 +87,11 @@ const OverviewChart = ({
       });
 
       if (existingDataPoint) {
-        existingDataPoint.y += refuel.quantity;
+        existingDataPoint.y += refuel.price;
       } else {
         result[refuel.fuelType].push({
           x: `${month}-${year}`,
-          y: refuel.quantity,
+          y: refuel.price,
         });
       }
     });
@@ -172,7 +170,7 @@ const OverviewChart = ({
       axisBottom={{
         format: (v) => {
           if (isDashboard) return v.slice(0, 3);
-          return v.substring(0, v.indexOf("-"))
+          return v.substring(0, v.indexOf("-"));
         },
         orient: "bottom",
         tickSize: 5,
@@ -187,7 +185,7 @@ const OverviewChart = ({
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? "" : "Litros",
+        legend: isDashboard ? "" : "Reais",
         legendOffset: -40,
         legendPosition: "middle",
       }}
@@ -199,7 +197,7 @@ const OverviewChart = ({
       pointBorderColor={{ from: "serieColor" }}
       enablePointLabel={true}
       pointLabel={(t) => {
-        return `${t.y.toFixed()} L`;
+        return `${t.y.toFixed()} R$`;
       }}
       pointLabelYOffset={-20}
       useMesh={true}
@@ -239,4 +237,4 @@ const OverviewChart = ({
   );
 };
 
-export default OverviewChart;
+export default OverviewValueChart;
