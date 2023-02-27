@@ -59,14 +59,18 @@ const insertVehicle = async () => {
   const cars = [];
 
   for (let i = 2; i <= 23; i++) {
-    const contractName = worksheet["A" + i].v;
-    const plate = worksheet["B" + i].v;
-    const type = worksheet["C" + i].v;
-    const manufacturer = worksheet["D" + i].v;
-    const model = worksheet["E" + i].v;
-    const color = worksheet["F" + i].v;
-    const tankCapacity = worksheet["H" + i].v;
-    const year = worksheet["I" + i].v;
+
+    const contractName = worksheet["B" + i].v
+    const plate = worksheet["E" + i].v
+    const manufacturer = worksheet["M" + i].v  !== undefined ? worksheet["M" + i].v : "Não Informado";
+    const type = worksheet["K" + i].v !== undefined ? worksheet["K" + i].v : "Não Informado";
+    const model = worksheet["N" + i].v !== undefined ? worksheet["N" + i].v : "Não Informado";
+    const color = worksheet["Q" + i].v !== undefined ? worksheet["Q" + i].v : "Não Informado";
+    const yearExcel = worksheet["O" + i].v !== undefined ? worksheet["O" + i].v : "Não Informado";
+    const isActiveExcel = worksheet["S" + i].v !== undefined ? worksheet["S" + i].v : "Não Informado";
+
+    const year =  yearExcel.substring(yearExcel.indexOf("/") + 1)
+    const isActve = isActiveExcel === "Ativo" ? true : false
 
     const [contract] = await Contract.find({ name: contractName });
     const contractId = contract._id;
@@ -78,8 +82,8 @@ const insertVehicle = async () => {
       manufacturer: manufacturer,
       model: model,
       color: color,
-      tankCapacity: parseInt(tankCapacity),
-      year: parseInt(year),
+      year: year,
+      isActive: isActive,
     });
 
     const [newVehicleDb] = await Vehicle.find({ plate: plate });
@@ -88,7 +92,6 @@ const insertVehicle = async () => {
     contract.vehicles.push(newVehicleDb._id);
 
     await contract.save();
-    //const vehicle = await Vehicle.find({ plate: plate });
   }
 
   /* const contract = await Contract.find({ name: "Integridade" });

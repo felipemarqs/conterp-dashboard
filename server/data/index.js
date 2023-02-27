@@ -1,22 +1,22 @@
 export const contractData = [
-    /* {
-        name: "ADM Geral",
+    {
+        name: "ADM GERAL",
         isActive: true
     },
     {
-        name: "ATPN Geral",
+        name: "ATPN GERAL",
         isActive: true
     },
     {
-        name: "Braskem",
+        name: "BRASKEM",
         isActive: false
     },
     {
-        name: "Caldeiraria",
+        name: "CALDEIRARIA",
         isActive: true
     },
     {
-        name: "Cavalo Marinho",
+        name: "CAVALO MARINHO",
         isActive: true
     },
     {
@@ -24,43 +24,46 @@ export const contractData = [
         isActive: true
     },
     {
-        name: "Comp Manut Int",
+        name: "COMP MANUT INT",
         isActive: true
     },
     {
-        name: "DOW Quimica",
+        name: "COMP SONDAS"
+    },
+    {
+        name: "DOW QUIMICA",
         isActive: true
     },
     {
-        name: "Estacao Fluido",
+        name: "ESTACAO FLUIDO",
         isActive: true
     },
     {
-        name: "Integridade",
+        name: "INTEGRIDADE",
         isActive: true
     },
     {
-        name: "Logistica BA",
+        name: "LOGISTICA BA",
         isActive: true
     },
     {
-        name: "Logistica SE",
+        name: "LOGISTICA SE",
         isActive: true
     },
     {
-        name: "Oficina Catu",
+        name: "OFICINA CATU",
         isActive: true
     },
     {
-        name: "Origem",
+        name: "ORIGEM",
         isActive: true
     },
     {
-        name: "Pintura Macae",
+        name: "PINTURA MACAE",
         isActive: true
     },
     {
-        name: "SE Terra Mar",
+        name: "SE TERRA MAR",
         isActive: true
     },
     {
@@ -68,7 +71,7 @@ export const contractData = [
         isActive: true
     },
     {
-        name: "Sonolog",
+        name: "SONOLOG",
         isActive: true
     },
     {
@@ -104,13 +107,10 @@ export const contractData = [
         isActive: true
     },
     {
-        name: "Usinagem",
+        name: "USINAGEM",
         isActive: true
-    } */
-    {
-        name: "Comp Sondas",
-        isActive: true
-    }
+    },
+
 ]
 
 export const vehicleData = [

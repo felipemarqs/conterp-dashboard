@@ -26,10 +26,7 @@ const VehicleSchema = new mongoose.Schema({
         type: String
     },
     Year: {
-        type: Number
-    },
-    tankCapacity: {
-        type: Number
+        type: String
     },
     isActive: {
         type: Boolean,
