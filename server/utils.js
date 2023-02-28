@@ -4,6 +4,7 @@ import xlsx from "xlsx";
 import Contract from "./models/Contract.js";
 import Vehicle from "./models/Vehicle.js";
 import Refuel from "./models/Refuel.js";
+import Manufacturer from "./models/Manufacturer.js";
 
 //Importing data from Excel
 let workbookFleet = xlsx.readFile("./data/excelFiles/fleet_alelo.xlsx");
@@ -16,31 +17,38 @@ let worksheetRefuel = workbookFuel.Sheets[workbookFuel.SheetNames[0]]
 
 export const insertVehicles = async () => {
     const cars = [];
+    const manufacturers = [];
   
     for (let i = 2; i <= 579; i++) {
       console.log("linha", i)
+      console.log("-----------------",worksheetFleet["Q" + i])
       const contractName = worksheetFleet["B" + i].v
       const plate = worksheetFleet["E" + i].v
-      const manufacturer = worksheetFleet["M" + i].v  !== undefined ? worksheetFleet["M" + i].v : "Não Informado";
-      const type = worksheetFleet["K" + i].v !== undefined ? worksheetFleet["K" + i].v : "Não Informado";
-      const model = worksheetFleet["N" + i].v !== undefined ? worksheetFleet["N" + i].v : "Não Informado";
-      const color = worksheetFleet["Q" + i].v !== undefined ? worksheetFleet["Q" + i].v : "Não Informado";
-      const yearExcel = worksheetFleet["O" + i].v !== undefined ? worksheetFleet["O" + i].v : "Não Informado";
-      const isActiveExcel = worksheetFleet["S" + i].v !== undefined ? worksheetFleet["S" + i].v : "Não Informado";
-  
-      const year =  yearExcel.substring(yearExcel.indexOf("/") + 1)
+      const manufacturerExcel = worksheetFleet["M" + i]  !== undefined ? worksheetFleet["M" + i].v : "Não Informado";
+      const type = worksheetFleet["K" + i] !== undefined ? worksheetFleet["K" + i].v : "Não Informado";
+      const model = worksheetFleet["N" + i] !== undefined ? worksheetFleet["N" + i].v : "Não Informado";
+      const color = worksheetFleet["Q" + i] !== undefined ? worksheetFleet["Q" + i].v : "Não Informado";
+      const yearExcel = worksheetFleet["O" + i] !== undefined ? worksheetFleet["O" + i].v : "Não Informado";
+      const isActiveExcel = worksheetFleet["S" + i] !== undefined ? worksheetFleet["S" + i].v : "Não Informado";
+        
+      const year = yearExcel.substring(yearExcel.indexOf("/") + 1)
       const isActive = isActiveExcel === "Ativo" ? true : false
 
-      cars.push({
-          contractId: contractName,
-          plate: plate,
-          type: type,
-          manufacturer: manufacturer,
-          model: model,
-          color: color,
-          year: year,
-          isActive: isActive,    
-      })
+      const [manufacturerExists] = await Manufacturer.find({name: manufacturerExcel})
+
+      if (!manufacturerExists) {
+        await Manufacturer.create(
+          {
+            name: manufacturerExcel
+          }
+        )
+      } 
+
+      manufacturerExists.models.push(model)
+
+      await manufacturerExists.save()
+
+
   
       /* const [contract] = await Contract.find({ name: contractName });
       const contractId = contract._id;
