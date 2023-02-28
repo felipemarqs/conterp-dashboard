@@ -1,26 +1,48 @@
+import xlsx from "xlsx";
+
+//Models
+import Contract from "./models/Contract.js";
+import Vehicle from "./models/Vehicle.js";
+import Refuel from "./models/Refuel.js";
+
 //Importing data from Excel
-let workbook = xlsx.readFile("./data/excelFiles/refuel@.xlsx");
+let workbookFleet = xlsx.readFile("./data/excelFiles/fleet_alelo.xlsx");
+let workbookFuel = xlsx.readFile("./data/excelFiles/refuel@.xlsx");
 
-let worksheet = workbook.Sheets[workbook.SheetNames[0]];
+
+let worksheetFleet = workbookFleet.Sheets[workbookFleet.SheetNames[0]];
+let worksheetRefuel = workbookFuel.Sheets[workbookFuel.SheetNames[0]]
 
 
-export const insertVehicle = async () => {
+export const insertVehicles = async () => {
     const cars = [];
   
-    for (let i = 2; i <= 23; i++) {
-      const contractName = worksheet["B" + i].v
-      const plate = worksheet["E" + i].v
-      const manufacturer = worksheet["M" + i].v  !== undefined ? worksheet["M" + i].v : "Não Informado";
-      const type = worksheet["K" + i].v !== undefined ? worksheet["K" + i].v : "Não Informado";
-      const model = worksheet["N" + i].v !== undefined ? worksheet["N" + i].v : "Não Informado";
-      const color = worksheet["Q" + i].v !== undefined ? worksheet["Q" + i].v : "Não Informado";
-      const yearExcel = worksheet["O" + i].v !== undefined ? worksheet["O" + i].v : "Não Informado";
-      const isActiveExcel = worksheet["S" + i].v !== undefined ? worksheet["S" + i].v : "Não Informado";
+    for (let i = 2; i <= 579; i++) {
+      console.log("linha", i)
+      const contractName = worksheetFleet["B" + i].v
+      const plate = worksheetFleet["E" + i].v
+      const manufacturer = worksheetFleet["M" + i].v  !== undefined ? worksheetFleet["M" + i].v : "Não Informado";
+      const type = worksheetFleet["K" + i].v !== undefined ? worksheetFleet["K" + i].v : "Não Informado";
+      const model = worksheetFleet["N" + i].v !== undefined ? worksheetFleet["N" + i].v : "Não Informado";
+      const color = worksheetFleet["Q" + i].v !== undefined ? worksheetFleet["Q" + i].v : "Não Informado";
+      const yearExcel = worksheetFleet["O" + i].v !== undefined ? worksheetFleet["O" + i].v : "Não Informado";
+      const isActiveExcel = worksheetFleet["S" + i].v !== undefined ? worksheetFleet["S" + i].v : "Não Informado";
   
       const year =  yearExcel.substring(yearExcel.indexOf("/") + 1)
-      const isActve = isActiveExcel === "Ativo" ? true : false
+      const isActive = isActiveExcel === "Ativo" ? true : false
+
+      cars.push({
+          contractId: contractName,
+          plate: plate,
+          type: type,
+          manufacturer: manufacturer,
+          model: model,
+          color: color,
+          year: year,
+          isActive: isActive,    
+      })
   
-      const [contract] = await Contract.find({ name: contractName });
+      /* const [contract] = await Contract.find({ name: contractName });
       const contractId = contract._id;
   
       await Vehicle.create({
@@ -39,8 +61,10 @@ export const insertVehicle = async () => {
   
       contract.vehicles.push(newVehicleDb._id);
   
-      await contract.save();
+      await contract.save(); */
     }
+
+    console.log(cars)
   };
 
   export const insertRefuelData = async () => {
@@ -52,11 +76,11 @@ export const insertVehicle = async () => {
   
     for (let i = 5; i <= 823; i++) {
       console.log("Veículo atual", i - 1);
-      const plate = worksheet["A" + i].v;
-      const date = worksheet["B" + i].v;
-      const quantity = worksheet["C" + i].v;
-      const price = worksheet["D" + i].v;
-      const fuelType = worksheet["E" + i].v;
+      const plate = worksheetRefuel["A" + i].v;
+      const date = worksheetRefuel["B" + i].v;
+      const quantity = worksheetRefuel["C" + i].v;
+      const price = worksheetRefuel["D" + i].v;
+      const fuelType = worksheetRefuel["E" + i].v;
   
       console.log(plate);
   

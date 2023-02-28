@@ -5,12 +5,8 @@ import mongoose from "mongoose";
 import helmet from "helmet";
 import dotenv from "dotenv";
 import morgan from "morgan";
-import xlsx from "xlsx";
 
-//Models
-import Contract from "./models/Contract.js";
-import Vehicle from "./models/Vehicle.js";
-import Refuel from "./models/Refuel.js";
+
 
 //Data
 import { contractData } from "./data/index.js";
@@ -20,7 +16,7 @@ import vehicleRoutes from "./routes/vehicle.js";
 import refuelRoutes from "./routes/refuel.js";
 
 //Funções para importar dados do Excel
-import {insertRefuelData , insertVehicle} from './utils.js'
+import {insertRefuelData , insertVehicles} from './utils.js'
 
 /*Configurando o servidor*/
 
@@ -65,7 +61,7 @@ mongoose
       //Contract.insertMany(contractData)
 
       //insertRefuelData();
-      //insertVehicle();
+      insertVehicles();
     });
   })
   .catch((error) => console.log(`${error} not connected`));
