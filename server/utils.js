@@ -6,12 +6,17 @@ import Vehicle from "./models/Vehicle.js";
 import Refuel from "./models/Refuel.js";
 import Manufacturer from "./models/Manufacturer.js";
 
+//Data
+import manufacturerData from './data/index.js'
+
 //Importing data from Excel
 let workbookFleet = xlsx.readFile("./data/excelFiles/fleet_alelo.xlsx");
 let workbookFuel = xlsx.readFile("./data/excelFiles/refuel@.xlsx");
 
 let worksheetFleet = workbookFleet.Sheets[workbookFleet.SheetNames[0]];
 let worksheetRefuel = workbookFuel.Sheets[workbookFuel.SheetNames[0]];
+
+
 
 export const insertVehicles = async () => {
   for (let i = 2; i <= 579; i++) {
@@ -45,28 +50,7 @@ export const insertVehicles = async () => {
     const year = yearExcel.substring(yearExcel.indexOf("/") + 1);
     const isActive = isActiveExcel === "Ativo" ? true : false;
 
-    let [manufacturerExists] = await Manufacturer.find({
-      name: manufacturerExcel,
-    });
-
-    if (!manufacturerExists) {
-      await Manufacturer.create({
-        name: manufacturerExcel,
-        models: modelExcel
-      });
-
-      manufacturerExists = await Manufacturer.find({
-        name: manufacturerExcel,
-      });
-     
-    } else {
-      !manufacturerExists.models.includes(modelExcel)
-        ? manufacturerExists.models.push(modelExcel)
-        : undefined;
-    }
-
-    
-
+  
     const [contract] = await Contract.find({ name: contractName });
     const contractId = contract._id;
 
@@ -128,3 +112,11 @@ export const insertRefuelData = async () => {
 
   Refuel.insertMany(refuelData);
 };
+
+export const insertManufactures = async () => {
+
+  await Manufacturer.insertMany(manufacturerData)
+
+
+
+}

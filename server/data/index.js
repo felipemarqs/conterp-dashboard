@@ -111,7 +111,72 @@ export const contractData = [
         name: "USINAGEM",
         isActive: true
     },
+]
 
+export const manufacturers = [
+    {
+        name: "HYUNDAI"
+    },
+    {
+        name: "MITSUBSHI"
+    },
+    {
+        name: "MERCEDES-BENZ"
+    },
+    {
+        name: "FORD"
+    },
+    {
+        name: "TOYOTA"
+    },
+    {
+        name: "JEEP"
+    },
+    {
+        name: "FIAT"
+    },
+    {
+        name: "EQUIPAMENTOS"
+    },
+    {
+        name: "VOLKSWAGEN"
+    },
+    {
+        name: "VOLVO"
+    },
+    {
+        name: "IVECO"
+    },
+    {
+        name: "CHEVROLET"
+    },
+    {
+        name: "CITROEN"
+    },
+    {
+        name: "RENAULT"
+    },
+    {
+        name: "NEW HOLLAND"
+    },
+    {
+        name: "JOHN DEERE"
+    },
+    {
+        name: "PEUGEOT"
+    },
+    {
+        name: "DESCONHECIDO"
+    },
+    {
+        name: "HONDA"
+    },
+    {
+        name: "SONDA"
+    },
+    {
+        name: "RANDON"
+    },
 ]
 
 export const vehicleData = [
