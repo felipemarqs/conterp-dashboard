@@ -28,7 +28,8 @@ export const contractData = [
         isActive: true
     },
     {
-        name: "COMP SONDAS"
+        name: "COMP SONDAS",
+        isActive: true
     },
     {
         name: "DOW QUIMICA",

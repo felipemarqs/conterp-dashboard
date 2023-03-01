@@ -19,7 +19,8 @@ const VehicleSchema = new mongoose.Schema({
         ref: 'Contract',
     },
     manufacturer: {
-        type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'Manufacturer',
         required: true
     },
     color: {

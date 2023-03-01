@@ -6,7 +6,8 @@ import helmet from "helmet";
 import dotenv from "dotenv";
 import morgan from "morgan";
 
-
+//Models
+import Contract from "./models/Contract.js";
 
 //Data
 import { contractData } from "./data/index.js";
