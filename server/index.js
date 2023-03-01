@@ -62,7 +62,7 @@ mongoose
       //Contract.insertMany(contractData)
 
       //insertRefuelData();
-      insertVehicles();
+      //nsertVehicles();
       //insertManufactures();
     });
   })
