@@ -17,7 +17,7 @@ import vehicleRoutes from "./routes/vehicle.js";
 import refuelRoutes from "./routes/refuel.js";
 
 //Funções para importar dados do Excel
-import {insertRefuelData , insertVehicles} from './utils.js'
+import {insertRefuelData , insertVehicles, insertManufactures} from './utils.js'
 
 /*Configurando o servidor*/
 
@@ -63,6 +63,7 @@ mongoose
 
       //insertRefuelData();
       insertVehicles();
+      //insertManufactures();
     });
   })
   .catch((error) => console.log(`${error} not connected`));

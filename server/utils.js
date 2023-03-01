@@ -7,7 +7,7 @@ import Refuel from "./models/Refuel.js";
 import Manufacturer from "./models/Manufacturer.js";
 
 //Data
-import manufacturerData from './data/index.js'
+import {manufacturers as manufacturersData} from './data/index.js'
 
 //Importing data from Excel
 let workbookFleet = xlsx.readFile("./data/excelFiles/fleet_alelo.xlsx");
@@ -52,22 +52,27 @@ export const insertVehicles = async () => {
 
   
     const [contract] = await Contract.find({ name: contractName });
-    const contractId = contract._id;
-
-    
+    const [manufacturer] =  await Manufacturer.find({name: manufacturerExcel})
 
     await Vehicle.create({
-      contractId: contractId,
+      contractId: contract._id,
       plate: plate,
       type: type,
-      manufacturer: manufacturerExists._id,
+      manufacturer: manufacturer._id,
       model: modelExcel,
       color: color,
       year: year,
       isActive: isActive,
     });
 
+    !manufacturer.models.includes(modelExcel) ? 
+    manufacturer.models.push(modelExcel) :
+    undefined
+
+    await manufacturer.save()
+
     const [newVehicleDb] = await Vehicle.find({ plate: plate });
+    console.log(`=================Linha${i}======================`)
     console.log("novo carro:", newVehicleDb);
 
     contract.vehicles.push(newVehicleDb._id);
@@ -115,7 +120,7 @@ export const insertRefuelData = async () => {
 
 export const insertManufactures = async () => {
 
-  await Manufacturer.insertMany(manufacturerData)
+  await Manufacturer.insertMany(manufacturersData)
 
 
 
