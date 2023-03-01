@@ -15,9 +15,14 @@ import { contractData } from "./data/index.js";
 import contractRoutes from "./routes/contract.js";
 import vehicleRoutes from "./routes/vehicle.js";
 import refuelRoutes from "./routes/refuel.js";
+import manufacturersRoutes from "./routes/manufacturer.js";
 
 //Funções para importar dados do Excel
-import {insertRefuelData , insertVehicles, insertManufactures} from './utils.js'
+import {
+  insertRefuelData,
+  insertVehicles,
+  insertManufactures,
+} from "./utils.js";
 
 /*Configurando o servidor*/
 
@@ -45,6 +50,7 @@ app.use(cors());
 app.use("/contract", contractRoutes);
 app.use("/vehicle", vehicleRoutes);
 app.use("/refuel", refuelRoutes);
+app.use("/manufacturers", manufacturersRoutes);
 
 /* Configurando o Mongoose */
 

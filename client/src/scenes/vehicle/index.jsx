@@ -22,6 +22,8 @@ const Vehicle = () => {
   const theme = useTheme();
   const { data, isLoading } = useGetVehiclesQuery();
 
+  console.log("vehicle data",data)
+
   if (data) {
     const filteredData = data.filter((element) => {
       if (element.contractId.name === contract) {
@@ -73,15 +75,13 @@ const Vehicle = () => {
         headerName: "Fabricante",
         align: "center",
         flex: 0.5,
+        renderCell: ({ row: { manufacturer } }) => {
+          return manufacturer.name;
+        },
       },
       {
         field: "color",
         headerName: "Color",
-        align: "center",
-      },
-      {
-        field: "tankCapacity",
-        headerName: "Capacidade",
         align: "center",
       },
       {
@@ -144,32 +144,32 @@ const Vehicle = () => {
                 borderColor: theme.palette.primary[500],
               }}
             >
-              <MenuItem value="ADM Geral">ADM Geral</MenuItem>
-              <MenuItem value="ATPN Geral">ATPN Geral</MenuItem>
-              <MenuItem value="Braskem">Braskem</MenuItem>
-              <MenuItem value="Caldeiraria">Caldeiraria</MenuItem>
-              <MenuItem value="Cavalo Marinho">Cavalo Marinho</MenuItem>
+              <MenuItem value="ADM GERAL">ADM Geral</MenuItem>
+              <MenuItem value="ATPN GERAL">ATPN Geral</MenuItem>
+              <MenuItem value="BRASKEM">Braskem</MenuItem>
+              <MenuItem value="CALDEIRARIA">Caldeiraria</MenuItem>
+              <MenuItem value="CAVALO MARINHO">Cavalo Marinho</MenuItem>
               <MenuItem value="CIPO UMIP">CIPO UMIP</MenuItem>
-              <MenuItem value="Comp Manut Int">Comp Manut Int</MenuItem>
-              <MenuItem value="DOW Quimica">DOW Quimica</MenuItem>
-              <MenuItem value="Estacao Fluido">Estacao Fluido</MenuItem>
-              <MenuItem value="Integridade">Integridade</MenuItem>
-              <MenuItem value="Logistica BA">Logistica BA</MenuItem>
-              <MenuItem value="Logistica SE">Logistica SE</MenuItem>
-              <MenuItem value="Oficina Catu">Oficina Catu</MenuItem>
-              <MenuItem value="Origem">Origem</MenuItem>
-              <MenuItem value="Pintura Macae">Pintura Macae</MenuItem>
-              <MenuItem value="SE Terra Mar">SE Terra Mar</MenuItem>
+              <MenuItem value="COMP MANUT INT">Comp Manut Int</MenuItem>
+              <MenuItem value="DOW QUIMICA">DOW Quimica</MenuItem>
+              <MenuItem value="ESTACAO FLUIDO">Estacao Fluido</MenuItem>
+              <MenuItem value="INTEGRIDADE">Integridade</MenuItem>
+              <MenuItem value="LOGISTICA BA">Logistica BA</MenuItem>
+              <MenuItem value="LOGISTICA SE">Logistica SE</MenuItem>
+              <MenuItem value="OFICINA CATU">Oficina Catu</MenuItem>
+              <MenuItem value="ORIGEM">Origem</MenuItem>
+              <MenuItem value="PINTURA MACAE">Pintura Macae</MenuItem>
+              <MenuItem value="SE TERRA MAR">SE Terra Mar</MenuItem>
               <MenuItem value="SESMT">SESMT</MenuItem>
-              <MenuItem value="Sonolog">Sonolog</MenuItem>
+              <MenuItem value="SONOLOG">Sonolog</MenuItem>
               <MenuItem value="SPT 115">SPT 115</MenuItem>
               <MenuItem value="SPT 151">SPT 151</MenuItem>
               <MenuItem value="SPT 60">SPT 60</MenuItem>
               <MenuItem value="SPT 76">SPT 76</MenuItem>
               <MenuItem value="SPT 88">SPT 88</MenuItem>
               <MenuItem value="SPT 54">SPT 54</MenuItem>
-              <MenuItem value="Usinagem">Usinagem</MenuItem>
-              <MenuItem value="Comp Sondas">Comp Sondas</MenuItem>
+              <MenuItem value="USINAGEM">Usinagem</MenuItem>
+              <MenuItem value="COMP SONDAS">Comp Sondas</MenuItem>
             </Select>
           </Box>
           <DataGrid

@@ -1,11 +1,9 @@
-import express from 'express'
+import express from "express";
 
-import { getContracts } from '../controllers/contract.js'
+import { getContracts } from "../controllers/contract.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/list" , getContracts)
-
-
+router.get("/list", getContracts);
 
 export default router;
