@@ -1,5 +1,6 @@
 import Contract from "../models/Contract.js";
 import Vehicle from "../models/Vehicle.js";
+import Manufacturer from '../models/Manufacturer.js'
 
 export const getVehicles = async (req, res) => {
   try {
@@ -15,46 +16,43 @@ export const postVehicle = async (req, res) => {
     contractName,
     plate,
     type,
-    manufacturer,
+    manufacturer : manufacturerName,
     model,
     color,
-    tankCapacity,
     year,
   } = req.body;
 
-  console.log("asasasasas",
-    contractName
-  );
-
-  const tankCapacityNumber = parseInt(tankCapacity)
-  const yearNumber = parseInt(year)
 
   const [vehicleExists] = await Vehicle.find({ plate: plate });
+  const [contract] = await Contract.find({ name: contractName });
+  const [manufacturer] = await Manufacturer.find({name: manufacturerName})
 
   if (vehicleExists) {
     res.status(404).json({ error: "Veículo já cadastrado!" });
     return;
   }
 
+  if (!contract) {
+    res.status(404).json({ error: "Contrato não cadastrado" });
+    return
+  }
+
+  if (!manufacturer) {
+    res.status(404).json({ error: "Fabricante não cadastrado" });
+    return
+  }
+
 
   try {
-    const [contract] = await Contract.find({ name: contractName });
-
-    if (!contract) {
-      res.status(404).json({ error: "Contrato não cadastrado" });
-      return
-    }
-    const contractId = contract._id;
+   
     await Vehicle.create({
-      contractId: contractId,
-      contract: contract,
-      plate: plate,
+      plate: plate.toUpperCase(),
       type: type,
-      manufacturer: manufacturer,
       model: model,
+      contractId: contract._id,
+      manufacturer: manufacturer._id,
       color: color,
-      tankCapacity: tankCapacityNumber,
-      year: yearNumber,
+      Year: year,
     });
 
     const [newVehicle] = await Vehicle.find({ plate: plate });

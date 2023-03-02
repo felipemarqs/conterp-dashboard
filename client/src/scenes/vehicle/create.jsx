@@ -14,33 +14,37 @@ import {
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
-import { useCreateVehicleMutation, useGetManufacturersQuery } from "../../state/api.js";
+import { useCreateVehicleMutation, useGetManufacturersQuery, useGetContractsQuery } from "../../state/api.js";
 
 const CreateVehicle = () => {
-  const [createVehicleMutation, data] = useCreateVehicleMutation();
+  const [createVehicleMutation, {error}] = useCreateVehicleMutation();
   const [contractInput, setContractInput] = useState("");
   const [vehicleTypeInput, setVehicleTypeInput] = useState("")
   const [manufacturerInput, setManufacturerInput] = useState("")
   const [vehicleModelInput, setVehicleModelInput] = useState("")
   const [selectedManufacturer, setSelectedManufacurer] = useState()
   const { data: manufacturerData } = useGetManufacturersQuery()
-  console.log(manufacturerData)
-  console.log(manufacturerInput)
+  const { data: contractData } = useGetContractsQuery()
+ 
+
+  console.log("error mutation",errorData)
+
 
   const getManufacturer = (data) => {
-   const result = data.find((element)=> {
+    const result = data.find((element) => {
       return element.name === manufacturerInput
     })
     return result
   }
 
- 
-  useEffect(()=> {
-    setSelectedManufacurer(getManufacturer(manufacturerData))
+
+  useEffect(() => {
+    if (manufacturerData) {
+      setSelectedManufacurer(getManufacturer(manufacturerData))
+    }
   }, [manufacturerInput])
 
-  console.log("====================",selectedManufacturer)
- 
+
 
   const theme = useTheme();
 
@@ -48,6 +52,9 @@ const CreateVehicle = () => {
     const vehicle = {
       ...values,
       contractName: contractInput,
+      manufacturer: manufacturerInput,
+      model: vehicleModelInput,
+      type: vehicleTypeInput
     };
     await createVehicleMutation(vehicle);
   };
@@ -60,7 +67,6 @@ const CreateVehicle = () => {
     manufacturer: "",
     color: "",
     year: "",
-    tankCapacity: "",
   };
 
   const vechileSchema = yup.object().shape({
@@ -69,12 +75,8 @@ const CreateVehicle = () => {
       .required("required")
       .min(7, "Placa inválida!")
       .max(7, "Placa inválida"),
-    type: yup.string().required("required"),
-    model: yup.string().required("required"),
-    manufacturer: yup.string().required("required"),
     color: yup.string(),
     year: yup.string().required("required"),
-    tankCapacity: yup.string().required("required"),
   });
 
   const isNonMobile = useMediaQuery("(min-width:600px)");
@@ -154,32 +156,12 @@ const CreateVehicle = () => {
                     width: "100%"
                   }}
                 >
-                  <MenuItem value="ADM GERAL">ADM Geral</MenuItem>
-                  <MenuItem value="ATPN GERAL">ATPN Geral</MenuItem>
-                  <MenuItem value="BRASKEM">Braskem</MenuItem>
-                  <MenuItem value="CALDEIRARIA">Caldeiraria</MenuItem>
-                  <MenuItem value="CAVALO MARINHO">Cavalo Marinho</MenuItem>
-                  <MenuItem value="CIPO UMIP">CIPO UMIP</MenuItem>
-                  <MenuItem value="COMP MANUT INT">Comp Manut Int</MenuItem>
-                  <MenuItem value="DOW QUIMICA">DOW Quimica</MenuItem>
-                  <MenuItem value="ESTACAO FLUIDO">Estacao Fluido</MenuItem>
-                  <MenuItem value="INTEGRIDADE">Integridade</MenuItem>
-                  <MenuItem value="LOGISTICA BA">Logistica BA</MenuItem>
-                  <MenuItem value="LOGISTICA SE">Logistica SE</MenuItem>
-                  <MenuItem value="OFICINA CATU">Oficina Catu</MenuItem>
-                  <MenuItem value="ORIGEM">Origem</MenuItem>
-                  <MenuItem value="PINTURA MACAE">Pintura Macae</MenuItem>
-                  <MenuItem value="SE TERRA MAR">SE Terra Mar</MenuItem>
-                  <MenuItem value="SESMT">SESMT</MenuItem>
-                  <MenuItem value="SONOLOG">Sonolog</MenuItem>
-                  <MenuItem value="SPT 115">SPT 115</MenuItem>
-                  <MenuItem value="SPT 151">SPT 151</MenuItem>
-                  <MenuItem value="SPT 60">SPT 60</MenuItem>
-                  <MenuItem value="SPT 76">SPT 76</MenuItem>
-                  <MenuItem value="SPT 88">SPT 88</MenuItem>
-                  <MenuItem value="SPT 54">SPT 54</MenuItem>
-                  <MenuItem value="USINAGEM">Usinagem</MenuItem>
-                  <MenuItem value="COMP SONDAS">Comp Sondas</MenuItem>
+                  {contractData ? contractData.map((element) => (
+                    <MenuItem key={element.name} value={element.name}>{element.name}</MenuItem>
+                  )) :
+                    <MenuItem disabled>Carregando...</MenuItem>
+                  }
+
                 </Select>
               </Box>
 
@@ -250,10 +232,10 @@ const CreateVehicle = () => {
                     gridColumn: "span 2",
                   }}
                 >
-                  { selectedManufacturer ? selectedManufacturer.models.map(()=> (
-                    <></>
-                  )) : 
-                  <MenuItem> Selecione um Fabricante</MenuItem>
+                  {selectedManufacturer ? selectedManufacturer.models.map((element) => (
+                    <MenuItem key={element} value={element}> {element}</MenuItem>
+                  )) :
+                    <MenuItem disabled> Selecione um Fabricante</MenuItem>
 
                   }
                 </Select>
@@ -294,34 +276,6 @@ const CreateVehicle = () => {
                 }}
               />
             </Box>
-
-
-
-
-            <Box display="flex"
-              flexDirection="column"
-              sx={{ gridColumn: "span 1" }}
-            >
-              <InputLabel sx={{ borderColor: "black" }}>Tipo do Veículo</InputLabel>
-              <Select
-                label="Tipo do Veículo"
-                name="type"
-                value={vehicleTypeInput}
-                onChange={(e) => setVehicleTypeInput(e.target.value)}
-                sx={{
-                  color: "white",
-                  borderColor: theme.palette.primary[500],
-                  gridColumn: "span 1",
-                }}
-              >
-                <MenuItem value="LEVE">Leve</MenuItem>
-                <MenuItem value="CAMINHÕES">Caminhão</MenuItem>
-                <MenuItem value="MÁQUINAS/EQUIPAMENTOS">Máquinas/Equipamentos</MenuItem>
-                <MenuItem value="SONDA">Sonda</MenuItem>
-              </Select>
-
-            </Box>
-
             <Box
               display="flex"
               justifyContent={isNonMobile ? "center" : "end"}
@@ -334,7 +288,9 @@ const CreateVehicle = () => {
           </form>
         )}
       </Formik>
+      { error ? <> <h1> erro </h1> </> : undefined}
     </Box>
+   
   );
 };
 
