@@ -50,7 +50,7 @@ app.use(cors());
 app.use("/contract", contractRoutes);
 app.use("/vehicle", vehicleRoutes);
 app.use("/refuel", refuelRoutes);
-app.use("/manufacturers", manufacturersRoutes);
+app.use("/manufacturer", manufacturersRoutes);
 
 /* Configurando o Mongoose */
 
