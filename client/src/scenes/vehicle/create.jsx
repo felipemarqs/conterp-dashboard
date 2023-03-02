@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import {
@@ -14,18 +14,40 @@ import {
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
-import { useCreateVehicleMutation } from "../../state/api.js";
+import { useCreateVehicleMutation, useGetManufacturersQuery } from "../../state/api.js";
 
 const CreateVehicle = () => {
   const [createVehicleMutation, data] = useCreateVehicleMutation();
-  const [contract, setContract] = useState("");
+  const [contractInput, setContractInput] = useState("");
+  const [vehicleTypeInput, setVehicleTypeInput] = useState("")
+  const [manufacturerInput, setManufacturerInput] = useState("")
+  const [vehicleModelInput, setVehicleModelInput] = useState("")
+  const [selectedManufacturer, setSelectedManufacurer] = useState()
+  const { data: manufacturerData } = useGetManufacturersQuery()
+  console.log(manufacturerData)
+  console.log(manufacturerInput)
+
+  const getManufacturer = (data) => {
+   const result = data.find((element)=> {
+      return element.name === manufacturerInput
+    })
+    return result
+  }
+
+ 
+  useEffect(()=> {
+    setSelectedManufacurer(getManufacturer(manufacturerData))
+  }, [manufacturerInput])
+
+  console.log("====================",selectedManufacturer)
+ 
 
   const theme = useTheme();
 
   const handleFormSubmit = async (values) => {
     const vehicle = {
       ...values,
-      contractName: contract,
+      contractName: contractInput,
     };
     await createVehicleMutation(vehicle);
   };
@@ -91,123 +113,153 @@ const CreateVehicle = () => {
                 },
               }}
             >
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Placa"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.plate}
-                name="plate"
-                error={!!touched.plate && !!errors.plate}
-                helperText={touched.plate && errors.plate}
-                sx={{
-                  gridColumn: "span 1",
-                }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Tipo do Veículo"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.type}
-                name="type"
-                error={!!touched.type && !!errors.type}
-                helperText={touched.type && errors.type}
-                sx={{
-                  gridColumn: "span 2",
-                }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Modelo do Veículo"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.model}
-                name="model"
-                error={!!touched.model && !!errors.model}
-                helperText={touched.model && errors.model}
-                sx={{
-                  gridColumn: "span 1",
-                }}
-              />
 
-              <InputLabel sx={{ borderColor: "black" }}>Contrato</InputLabel>
-              <Select
-                label="Contrato"
-                name="contractName"
-                value={contract}
-                onChange={(e) => setContract(e.target.value)}
-                sx={{
-                  color: "white",
-                  borderColor: theme.palette.primary[500],
-                  gridColumn: "span 1",
-                }}
+              <Box display="flex"
+                flexDirection="column"
+                sx={{ gridColumn: "span 1" }}
               >
-                <MenuItem value="ADM Geral">ADM Geral</MenuItem>
-                <MenuItem value="ATPN Geral">ATPN Geral</MenuItem>
-                <MenuItem value="Braskem">Braskem</MenuItem>
-                <MenuItem value="Caldeiraria">Caldeiraria</MenuItem>
-                <MenuItem value="Cavalo Marinho">Cavalo Marinho</MenuItem>
-                <MenuItem value="CIPO UMIP">CIPO UMIP</MenuItem>
-                <MenuItem value="Comp Manut Int">Comp Manut Int</MenuItem>
-                <MenuItem value="DOW Quimica">DOW Quimica</MenuItem>
-                <MenuItem value="Estacao Fluido">Estacao Fluido</MenuItem>
-                <MenuItem value="Integridade">Integridade</MenuItem>
-                <MenuItem value="Logistica BA">Logistica BA</MenuItem>
-                <MenuItem value="Logistica SE">Logistica SE</MenuItem>
-                <MenuItem value="Oficina Catu">Oficina Catu</MenuItem>
-                <MenuItem value="Origem">Origem</MenuItem>
-                <MenuItem value="Pintura Macae">Pintura Macae</MenuItem>
-                <MenuItem value="SE Terra Mar">SE Terra Mar</MenuItem>
-                <MenuItem value="SESMT">SESMT</MenuItem>
-                <MenuItem value="Sonolog">Sonolog</MenuItem>
-                <MenuItem value="SPT 115">SPT 115</MenuItem>
-                <MenuItem value="SPT 151">SPT 151</MenuItem>
-                <MenuItem value="SPT 60">SPT 60</MenuItem>
-                <MenuItem value="SPT 76">SPT 76</MenuItem>
-                <MenuItem value="SPT 88">SPT 88</MenuItem>
-                <MenuItem value="SPT 54">SPT 54</MenuItem>
-                <MenuItem value="Usinagem">Usinagem</MenuItem>
-                <MenuItem value="Comp Sondas">Comp Sondas</MenuItem>
-              </Select>
+                <InputLabel sx={{ borderColor: "black" }}>Placa</InputLabel>
+                <TextField
+                  fullWidth
+                  variant="filled"
+                  type="text"
+                  label=""
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.plate}
+                  name="plate"
+                  error={!!touched.plate && !!errors.plate}
+                  helperText={touched.plate && errors.plate}
+                  sx={{
+                    gridColumn: "span 1",
+                  }}
+                />
 
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Fabricante do Veículo"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.manufacturer}
-                name="manufacturer"
-                error={!!touched.manufacturer && !!errors.manufacturer}
-                helperText={touched.manufacturer && errors.manufacturer}
-                sx={{
-                  gridColumn: "span 2",
-                }}
-              />
+              </Box>
 
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Cor do Veículo"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.color}
-                name="color"
-                error={!!touched.color && !!errors.color}
-                helperText={touched.color && errors.color}
-                sx={{
-                  gridColumn: "span 2",
-                }}
-              />
+
+              <Box display="flex"
+                flexDirection="column"
+                sx={{ gridColumn: "span 2" }}
+              >
+                <InputLabel sx={{ borderColor: "black" }}>Contrato</InputLabel>
+                <Select
+                  label="Contrato"
+                  name="contractName"
+                  value={contractInput}
+                  onChange={(e) => setContractInput(e.target.value)}
+                  sx={{
+                    color: "white",
+                    borderColor: theme.palette.primary[500],
+                    width: "100%"
+                  }}
+                >
+                  <MenuItem value="ADM GERAL">ADM Geral</MenuItem>
+                  <MenuItem value="ATPN GERAL">ATPN Geral</MenuItem>
+                  <MenuItem value="BRASKEM">Braskem</MenuItem>
+                  <MenuItem value="CALDEIRARIA">Caldeiraria</MenuItem>
+                  <MenuItem value="CAVALO MARINHO">Cavalo Marinho</MenuItem>
+                  <MenuItem value="CIPO UMIP">CIPO UMIP</MenuItem>
+                  <MenuItem value="COMP MANUT INT">Comp Manut Int</MenuItem>
+                  <MenuItem value="DOW QUIMICA">DOW Quimica</MenuItem>
+                  <MenuItem value="ESTACAO FLUIDO">Estacao Fluido</MenuItem>
+                  <MenuItem value="INTEGRIDADE">Integridade</MenuItem>
+                  <MenuItem value="LOGISTICA BA">Logistica BA</MenuItem>
+                  <MenuItem value="LOGISTICA SE">Logistica SE</MenuItem>
+                  <MenuItem value="OFICINA CATU">Oficina Catu</MenuItem>
+                  <MenuItem value="ORIGEM">Origem</MenuItem>
+                  <MenuItem value="PINTURA MACAE">Pintura Macae</MenuItem>
+                  <MenuItem value="SE TERRA MAR">SE Terra Mar</MenuItem>
+                  <MenuItem value="SESMT">SESMT</MenuItem>
+                  <MenuItem value="SONOLOG">Sonolog</MenuItem>
+                  <MenuItem value="SPT 115">SPT 115</MenuItem>
+                  <MenuItem value="SPT 151">SPT 151</MenuItem>
+                  <MenuItem value="SPT 60">SPT 60</MenuItem>
+                  <MenuItem value="SPT 76">SPT 76</MenuItem>
+                  <MenuItem value="SPT 88">SPT 88</MenuItem>
+                  <MenuItem value="SPT 54">SPT 54</MenuItem>
+                  <MenuItem value="USINAGEM">Usinagem</MenuItem>
+                  <MenuItem value="COMP SONDAS">Comp Sondas</MenuItem>
+                </Select>
+              </Box>
+
+              <Box display="flex"
+                flexDirection="column"
+                sx={{ gridColumn: "span 1" }}
+              >
+                <InputLabel sx={{ borderColor: "black" }}>Tipo do Veículo</InputLabel>
+                <Select
+                  label="Tipo do Veículo"
+                  name="type"
+                  value={vehicleTypeInput}
+                  onChange={(e) => setVehicleTypeInput(e.target.value)}
+                  sx={{
+                    color: "white",
+                    borderColor: theme.palette.primary[500],
+                    gridColumn: "span 1",
+                  }}
+                >
+                  <MenuItem value="LEVE">Leve</MenuItem>
+                  <MenuItem value="CAMINHÕES">Caminhão</MenuItem>
+                  <MenuItem value="MÁQUINAS/EQUIPAMENTOS">Máquinas/Equipamentos</MenuItem>
+                  <MenuItem value="SONDA">Sonda</MenuItem>
+                </Select>
+
+              </Box>
+
+              <Box display="flex"
+                flexDirection="column"
+                sx={{ gridColumn: "span 2" }}
+              >
+                <InputLabel sx={{ borderColor: "black" }}>Fabricante</InputLabel>
+                <Select
+                  label="Fabricante do Veículo"
+                  name="type"
+                  value={manufacturerInput}
+                  onChange={(e) => setManufacturerInput(e.target.value)}
+                  sx={{
+                    color: "white",
+                    borderColor: theme.palette.primary[500],
+                    gridColumn: "span 1",
+                  }}
+                >
+                  {manufacturerData ?
+
+                    manufacturerData.map((item) => (
+                      <MenuItem key={item.name} value={item.name}>{item.name}</MenuItem>
+                    )) :
+                    <MenuItem> Carregando...</MenuItem>
+                  }
+                </Select>
+
+              </Box>
+
+              <Box display="flex"
+                flexDirection="column"
+                sx={{ gridColumn: "span 2" }}
+              >
+                <InputLabel sx={{ borderColor: "black" }}>Modelo do Veículo</InputLabel>
+                <Select
+                  label="Modelo do Veículo"
+                  name="type"
+                  value={vehicleModelInput}
+                  onChange={(e) => setVehicleModelInput(e.target.value)}
+                  sx={{
+                    color: "white",
+                    borderColor: theme.palette.primary[500],
+                    gridColumn: "span 2",
+                  }}
+                >
+                  { selectedManufacturer ? selectedManufacturer.models.map(()=> (
+                    <></>
+                  )) : 
+                  <MenuItem> Selecione um Fabricante</MenuItem>
+
+                  }
+                </Select>
+
+              </Box>
+
 
               <TextField
                 fullWidth
@@ -224,21 +276,50 @@ const CreateVehicle = () => {
                   gridColumn: "span 2",
                 }}
               />
+
+
               <TextField
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Capacidade do Tanque"
+                label="Cor do Veículo"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.tankCapacity}
-                name="tankCapacity"
-                error={!!touched.tankCapacity && !!errors.tankCapacity}
-                helperText={touched.tankCapacity && errors.tankCapacity}
+                value={values.color}
+                name="color"
+                error={!!touched.color && !!errors.color}
+                helperText={touched.color && errors.color}
                 sx={{
                   gridColumn: "span 2",
                 }}
               />
+            </Box>
+
+
+
+
+            <Box display="flex"
+              flexDirection="column"
+              sx={{ gridColumn: "span 1" }}
+            >
+              <InputLabel sx={{ borderColor: "black" }}>Tipo do Veículo</InputLabel>
+              <Select
+                label="Tipo do Veículo"
+                name="type"
+                value={vehicleTypeInput}
+                onChange={(e) => setVehicleTypeInput(e.target.value)}
+                sx={{
+                  color: "white",
+                  borderColor: theme.palette.primary[500],
+                  gridColumn: "span 1",
+                }}
+              >
+                <MenuItem value="LEVE">Leve</MenuItem>
+                <MenuItem value="CAMINHÕES">Caminhão</MenuItem>
+                <MenuItem value="MÁQUINAS/EQUIPAMENTOS">Máquinas/Equipamentos</MenuItem>
+                <MenuItem value="SONDA">Sonda</MenuItem>
+              </Select>
+
             </Box>
 
             <Box

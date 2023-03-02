@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
   reducerPath: "conterpApi",
-  tagTypes: ["Contract", "Vehicle", "Refuel"],
+  tagTypes: ["Contract", "Vehicle", "Refuel", "Manufacturer"],
   endpoints: (build) => ({
     getContracts: build.query({
       query: () => "contract/list",
@@ -28,9 +28,18 @@ export const api = createApi({
     getRefuel: build.query({
       query: () => "refuel/list",
       providesTags: ["Refuel"],
+    }),
+    getManufacturers: build.query({
+      query:() => "manufacturer/list",
+      providesTags: ["Manufacturer"],
     })
   }),
 });
 
-export const { useGetContractsQuery, useGetVehiclesQuery, useGetRefuelQuery , useCreateVehicleMutation} =
-  api;
+export const { 
+    useGetContractsQuery,
+    useGetVehiclesQuery,
+    useGetRefuelQuery ,
+    useCreateVehicleMutation,
+    useGetManufacturersQuery} 
+    = api;

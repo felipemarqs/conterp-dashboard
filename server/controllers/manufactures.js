@@ -10,3 +10,7 @@ export const getManufacturers = async (req, res) => {
     console.log(error);
   }
 };
+
+export const getModels = async (req, res) => {
+  req
+}
