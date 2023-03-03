@@ -27,7 +27,6 @@ const CreateVehicle = () => {
   const { data: contractData } = useGetContractsQuery()
  
 
-  console.log("error mutation",errorData)
 
 
   const getManufacturer = (data) => {

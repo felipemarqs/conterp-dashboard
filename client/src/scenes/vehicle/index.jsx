@@ -22,7 +22,7 @@ const Vehicle = () => {
   const theme = useTheme();
   const { data, isLoading } = useGetVehiclesQuery();
 
-  console.log("vehicle data",data)
+  console.log("vehicle data", data)
 
   if (data) {
     const filteredData = data.filter((element) => {
@@ -30,6 +30,10 @@ const Vehicle = () => {
         return element;
       }
     });
+
+    const handleClickTest = (item) => {
+      console.log("Item44 retornado ao clicar: ", item)
+    }
 
     const columns = [
       {
@@ -90,7 +94,48 @@ const Vehicle = () => {
         renderCell: (params) => {
           return params.getValue(params.id, "isActive") ? "Sim" : "Não";
         },
+
+
       },
+      {
+        field: "actions",
+        headerName: "Actions",
+        align: "center",
+        flex: 0.5,
+        renderCell: (params) => {
+
+          return (
+            <Box display="flex" justifyContent="space-around" alignItems="center" width="70%" key={params + "box"}>
+              <Button key={params}
+                onClick={()=> handleClickTest(params.row)}
+                sx={{
+                  backgroundColor: theme.palette.secondary.light,
+                  color: theme.palette.background.alt,
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  padding: "5px 10px",
+                }}
+              ><EditOutlinedIcon key={params + "icon1"} />
+              </Button>
+
+              <Button key={params + "2"}
+                sx={{
+                  backgroundColor: theme.palette.secondary.light,
+                  color: theme.palette.background.alt,
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  padding: "5px 10px",
+                }}
+              ><DeleteOutlineOutlinedIcon key={params + "icon2"} />
+              </Button>
+
+            </Box>
+          )
+          
+
+        }
+      }
+
     ];
     return (
       <Box m="1.5rem 2rem">
@@ -175,7 +220,7 @@ const Vehicle = () => {
           <DataGrid
             loading={isLoading || !data}
             getRowId={(row) => row._id}
-            rows={ filteredData || []}
+            rows={filteredData || []}
             columns={columns}
           />
         </Box>
