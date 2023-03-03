@@ -25,6 +25,13 @@ export const api = createApi({
         body: data
       }),
     }),
+    deleteVehicle: build.mutation({
+      query: (id)=> ({
+        url: `vehicle/delete/${id}`,
+        method: 'DELETE',
+      }),
+      prepare: (id) => ({params: { id: id}}),
+    }),
     getRefuel: build.query({
       query: () => "refuel/list",
       providesTags: ["Refuel"],
@@ -41,5 +48,7 @@ export const {
     useGetVehiclesQuery,
     useGetRefuelQuery ,
     useCreateVehicleMutation,
-    useGetManufacturersQuery} 
+    useGetManufacturersQuery,
+    useDeleteVehicleMutation
+  } 
     = api;

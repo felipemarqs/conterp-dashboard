@@ -2,6 +2,8 @@ import Contract from "../models/Contract.js";
 import Vehicle from "../models/Vehicle.js";
 import Manufacturer from '../models/Manufacturer.js'
 
+import mongoose from 'mongoose'
+
 export const getVehicles = async (req, res) => {
   try {
     const vehicles = await Vehicle.find().populate("contractId", "name").populate("manufacturer", "name");
@@ -16,7 +18,7 @@ export const postVehicle = async (req, res) => {
     contractName,
     plate,
     type,
-    manufacturer : manufacturerName,
+    manufacturer: manufacturerName,
     model,
     color,
     year,
@@ -25,7 +27,7 @@ export const postVehicle = async (req, res) => {
 
   const [vehicleExists] = await Vehicle.find({ plate: plate });
   const [contract] = await Contract.find({ name: contractName });
-  const [manufacturer] = await Manufacturer.find({name: manufacturerName})
+  const [manufacturer] = await Manufacturer.find({ name: manufacturerName })
 
   if (vehicleExists) {
     res.status(404).json({ error: "Veículo já cadastrado!" });
@@ -44,7 +46,7 @@ export const postVehicle = async (req, res) => {
 
 
   try {
-   
+
     await Vehicle.create({
       plate: plate.toUpperCase(),
       type: type,
@@ -65,16 +67,23 @@ export const postVehicle = async (req, res) => {
 };
 
 export const deleteVehicle = async (req, res) => {
-  const {id} = req.params
-  const vehicle = await Vehicle.findOne({_id : id})
-  const contractId = vehicle.contractId
-  const contract = await Contract.findOne({_id : contractId})
-  contract.vehicles.filter((element)=> {
-    element._id !== id
-  })
+  const { id } = req.params
+  console.log(id)
+
+  console.log("🎅🤶👼👼👼🎅🎅👮‍♀️👮‍♂️👮‍♂️👮‍♀️👮‍♀️👮‍♀️🎅🎅🤶")
+  const vehicle = await Vehicle.findById(mongoose.Types.ObjectId(id.toString()))
+
 
   try {
+
+    
+    const contractId = vehicle.contractId
+    const contract = await Contract.findById(mongoose.Types.ObjectId(contractId))
     await Vehicle.findByIdAndDelete(id)
+    contract.vehicles.filter((element) => {
+      element._id !== id
+    })
+    await contract.save()
     console.log("Deu certo | 👲👲")
     res.sendStatus(204)
   } catch (error) {

@@ -15,12 +15,13 @@ import Header from "../../components/Header";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import plateBackgroundImage from "../../assets/placa.png";
-import { useGetVehiclesQuery } from "state/api";
+import { useGetVehiclesQuery, useDeleteVehicleMutation } from "state/api";
 
 const Vehicle = () => {
   const [contract, setContract] = useState("");
   const theme = useTheme();
   const { data, isLoading } = useGetVehiclesQuery();
+  const [deleteId] = useDeleteVehicleMutation()
 
   console.log("vehicle data", data)
 
@@ -30,6 +31,11 @@ const Vehicle = () => {
         return element;
       }
     });
+
+    const handleDelete = (id) => {
+      
+      deleteId(id)
+    }
 
     const handleClickTest = (item) => {
       console.log("Item44 retornado ao clicar: ", item._id)
@@ -107,7 +113,7 @@ const Vehicle = () => {
           return (
             <Box display="flex" justifyContent="space-around" alignItems="center" width="70%" key={params + "box"}>
               <Button key={params}
-                onClick={()=> handleClickTest(params.row)}
+                onClick={()=> handleDelete(params.row)}
                 sx={{
                   backgroundColor: theme.palette.secondary.light,
                   color: theme.palette.background.alt,
