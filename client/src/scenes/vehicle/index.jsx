@@ -32,7 +32,7 @@ const Vehicle = () => {
     });
 
     const handleClickTest = (item) => {
-      console.log("Item44 retornado ao clicar: ", item)
+      console.log("Item44 retornado ao clicar: ", item._id)
     }
 
     const columns = [

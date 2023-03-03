@@ -63,3 +63,21 @@ export const postVehicle = async (req, res) => {
     console.log(error);
   }
 };
+
+export const deleteVehicle = async (req, res) => {
+  const {id} = req.params
+  const vehicle = await Vehicle.findOne({_id : id})
+  const contractId = vehicle.contractId
+  const contract = await Contract.findOne({_id : contractId})
+  contract.vehicles.filter((element)=> {
+    element._id !== id
+  })
+
+  try {
+    await Vehicle.findByIdAndDelete(id)
+    console.log("Deu certo | 👲👲")
+    res.sendStatus(204)
+  } catch (error) {
+    res.sendStatus(404)
+  }
+}
