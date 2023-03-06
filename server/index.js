@@ -67,7 +67,7 @@ mongoose
       //Insert data to Database (ONLY RUN IT ONCE!!)
       //Contract.insertMany(contractData)
 
-      //insertRefuelData();
+      insertRefuelData();
       //nsertVehicles();
       //insertManufactures();
     });

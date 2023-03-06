@@ -10,6 +10,7 @@ const OverviewChart = ({
   selectedContract = "all",
 }) => {
   const { data, isLoading } = useGetRefuelQuery();
+  console.log(data)
 
   const theme = useTheme();
 

@@ -84,12 +84,13 @@ export const insertVehicles = async () => {
 
 export const insertRefuelData = async () => {
   const refuelData = [];
+  const vehiclesNotFound = []
 
   function ExcelDateToJSDate(date) {
     return new Date(Math.round((date - 25569) * 86400 * 1000));
   }
 
-  for (let i = 5; i <= 823; i++) {
+  for (let i = 2; i <= 16308; i++) {
     console.log("Veículo atual", i - 1);
     const plate = worksheetRefuel["A" + i].v;
     const date = worksheetRefuel["B" + i].v;
@@ -112,10 +113,15 @@ export const insertRefuelData = async () => {
         price: price,
         fuelType: fuelType,
       });
+    } else {
+      if (!vehiclesNotFound.includes(plate)) {
+        vehiclesNotFound.push(plate);
+      }
     }
   }
 
-  Refuel.insertMany(refuelData);
+  await Refuel.insertMany(refuelData);
+  console.log(vehiclesNotFound)
 };
 
 export const insertManufactures = async () => {
